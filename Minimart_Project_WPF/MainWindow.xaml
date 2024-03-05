@@ -12,21 +12,5 @@
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button
-
-  Content="_DARK"
-  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-  Style="{StaticResource MaterialDesignRaisedDarkButton}"
-  ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Margin="318,227,381,175" RenderTransformOrigin="0.5,0.5" >
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.226"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-    </Grid>
+    <Grid/>
 </Window>
