@@ -11,7 +11,7 @@
         <!-- Start: Indicator Style -->
         <Style x:Key="IndicatorStyle" TargetType="{x:Type Border}">
             <Setter Property="CornerRadius" Value="0 5 5 0"/>
-            <Setter Property="Background" Value="{DynamicResource PrimaryBlueColor}"/>
+            <Setter Property="Background" Value="#FFFF4081"/>
             <Setter Property="Visibility" Value="Hidden"/>
             <Setter Property="Height" Value="35"/>
             <Setter Property="Width" Value="4"/>
@@ -20,7 +20,7 @@
             <Style.Triggers>
                 <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}" Value="True">
                     <Setter Property="Visibility" Value="Visible"/>
-                    <Setter Property="Background" Value="{DynamicResource TextFourthColor}"/>
+                    <Setter Property="Background" Value="#FFFF4081"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}" Value="True">
                     <Setter Property="Visibility" Value="Visible"/>
@@ -35,10 +35,10 @@
             <Setter Property="Fill" Value="{DynamicResource SecundaryIconColor}"/>
             <Style.Triggers>
                 <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}" Value="True">
-                    <Setter Property="Fill" Value="{DynamicResource TextFourthColor}"/>
+                    <Setter Property="Fill" Value="#FFFF4081"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}" Value="True">
-                    <Setter Property="Fill" Value="{DynamicResource PrimaryBlueColor}"/>
+                    <Setter Property="Fill" Value="#FFFF4081"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -53,10 +53,10 @@
             <Setter Property="Margin" Value="18 0 0 0"/>
             <Style.Triggers>
                 <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}" Value="True">
-                    <Setter Property="Foreground" Value="{DynamicResource TextFourthColor}"/>
+                    <Setter Property="Foreground" Value="#FFFF4081"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}" Value="True">
-                    <Setter Property="Foreground" Value="{DynamicResource PrimaryBlueColor}"/>
+                    <Setter Property="Foreground" Value="#FFFF4081"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -73,7 +73,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ToggleButton}">
                         <Border Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{Binding Padding, ElementName=this}">
-                            <Grid>
+                            <Grid Margin="-1,-1,1,1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="60"/>
                                     <ColumnDefinition/>

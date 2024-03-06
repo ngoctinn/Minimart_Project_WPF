@@ -212,7 +212,7 @@ namespace Minimart_Project_WPF.Views
 
         private void btnDashboard_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Pages/Dashboard.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(new System.Uri("Views/Dashboard.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }
