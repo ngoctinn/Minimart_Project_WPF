@@ -3,4 +3,5 @@
                     xmlns:viewmodel="clr-namespace:Minimart_Project_WPF.ViewModels"
                     xmlns:local="clr-namespace:Minimart_Project_WPF">
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
+    <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
 </ResourceDictionary>
