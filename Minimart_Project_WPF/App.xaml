@@ -10,6 +10,9 @@
                 <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Pink"  SecondaryColor="Pink" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
                 <ResourceDictionary Source="/Resource/MainResource.xaml"/>
+                <ResourceDictionary Source="/Resource/MainStyle.xaml"/>
+                <ResourceDictionary Source="/Resource/DarkTheme.xaml"/>
+                <ResourceDictionary Source="/Resource/Icons.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 

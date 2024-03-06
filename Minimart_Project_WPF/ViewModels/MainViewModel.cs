@@ -10,8 +10,7 @@ namespace Minimart_Project_WPF.ViewModels
     {
         public MainViewModel()
         {
-            LoginWindow login = new LoginWindow();
-            login.ShowDialog();
+           
         }
     }
 }
