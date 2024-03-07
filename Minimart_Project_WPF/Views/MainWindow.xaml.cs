@@ -214,5 +214,9 @@ namespace Minimart_Project_WPF.Views
         {
             fContainer.Navigate(new System.Uri("Views/Dashboard.xaml", UriKind.RelativeOrAbsolute));
         }
+        private void btnBanHang_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Views/BanHangPage.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

@@ -37,7 +37,7 @@
                               Margin="14 0 0 0"
                               Width="32" Height="24"
                               HorizontalAlignment="Left">
-                            
+
                         </Border>
 
                         <Label Content="Poppins"
@@ -54,12 +54,13 @@
                         <Button x:Name="btnHome" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnHome_MouseEnter" MouseLeave="btnHome_MouseLeave" Click="btnHome_Click">
                             <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource home}" IconWidth="16" Text="Thống kê" VerticalAlignment="Center" />
                         </Button>
+                        <Button x:Name="btnProducts" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnProducts_MouseEnter" MouseLeave="btnProducts_MouseLeave" Click="btnBanHang_Click">
+                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource banhang}" IconWidth="16" Text="Sản phẩm" VerticalAlignment="Center"/>
+                        </Button>
                         <Button x:Name="btnDashboard" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnDashboard_MouseEnter" MouseLeave="btnDashboard_MouseLeave" Click="btnDashboard_Click">
                             <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource dashboard}" IconWidth="16" Text="Bán hàng" VerticalAlignment="Center"/>
                         </Button>
-                        <Button x:Name="btnProducts" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnProducts_MouseEnter" MouseLeave="btnProducts_MouseLeave">
-                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource products}" IconWidth="16" Text="Sản phẩm" VerticalAlignment="Center"/>
-                        </Button>
+
                         <Button x:Name="btnProductStock" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnProductStock_MouseEnter" MouseLeave="btnProductStock_MouseLeave">
                             <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource products}" IconWidth="16" Text="Loại sản phẩm" VerticalAlignment="Center"/>
                         </Button>
@@ -93,10 +94,11 @@
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="83*"/>
+                    <RowDefinition Height="212*"/>
                 </Grid.RowDefinitions>
 
-                <ToggleButton  x:Name="Tg_Btn" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource MaterialDesignHamburgerToggleButton}" HorizontalAlignment="Left" BorderThickness="0" Background="Transparent" Margin="10,15,0,15" Height="30" Width="30">
+                <ToggleButton  x:Name="Tg_Btn" VerticalAlignment="Center" Style="{StaticResource MaterialDesignHamburgerToggleButton}" HorizontalAlignment="Left" BorderThickness="0" Background="Transparent" Margin="4,0,0,0" Height="30" Width="30">
                     <ToggleButton.Triggers>
                         <EventTrigger RoutedEvent="ToggleButton.Unchecked">
                             <BeginStoryboard>
@@ -118,7 +120,7 @@
                 </ToggleButton>
 
                 <!-- Start: Button Close | Restore | Minimize -->
-                <StackPanel Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft" Grid.RowSpan="2">
+                <StackPanel Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft">
                     <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton"/>
                     <Button x:Name="btnRestore" Margin="5,0" Click="btnRestore_Click">
                         <Button.Style>
@@ -138,8 +140,8 @@
 
                 <Frame Grid.Row="1"
                        Name="fContainer"
-                       Margin="15"
-                       NavigationUIVisibility="Hidden">
+                       Margin="15,15,15,15"
+                       NavigationUIVisibility="Hidden" Grid.RowSpan="2">
 
                 </Frame>
 
