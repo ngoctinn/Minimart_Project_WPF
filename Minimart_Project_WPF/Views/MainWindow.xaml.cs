@@ -49,103 +49,103 @@ namespace Minimart_Project_WPF.Views
             Popup.IsOpen = false;
         }
 
-        private void btnDashboard_MouseEnter(object sender, MouseEventArgs e)
+        private void btnSanPham_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnDashboard;
+                Popup.PlacementTarget = btnSanPham;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Dashboard";
+                Header.PopupText.Text = "Sản phẩm";
             }
         }
 
-        private void btnDashboard_MouseLeave(object sender, MouseEventArgs e)
+        private void btnSanPham_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
 
-        private void btnProducts_MouseEnter(object sender, MouseEventArgs e)
+        private void btnBanHang_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnProducts;
+                Popup.PlacementTarget = btnBanHang;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Products";
+                Header.PopupText.Text = "Bán hàng";
             }
         }
 
-        private void btnProducts_MouseLeave(object sender, MouseEventArgs e)
+        private void btnBanHang_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
 
-        private void btnProductStock_MouseEnter(object sender, MouseEventArgs e)
+        private void btnLoaiSanPham_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnProductStock;
+                Popup.PlacementTarget = btnLoaiSanPham;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Product Stock";
+                Header.PopupText.Text = "Loại sản phẩm";
             }
         }
 
-        private void btnProductStock_MouseLeave(object sender, MouseEventArgs e)
+        private void btnLoaiSanPham_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
 
-        private void btnOrderList_MouseEnter(object sender, MouseEventArgs e)
+        private void btnKhachHang_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnOrderList;
+                Popup.PlacementTarget = btnKhachHang;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Order List";
+                Header.PopupText.Text = "Khách hàng";
             }
         }
 
-        private void btnOrderList_MouseLeave(object sender, MouseEventArgs e)
+        private void btnKhachHang_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
 
-        private void btnBilling_MouseEnter(object sender, MouseEventArgs e)
+        private void btnKhoHang_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnBilling;
+                Popup.PlacementTarget = btnKhoHang;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Billing";
+                Header.PopupText.Text = "Kho Hàng";
             }
         }
 
-        private void btnBilling_MouseLeave(object sender, MouseEventArgs e)
+        private void btnKhoHang_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
 
-        private void btnPointOfSale_MouseEnter(object sender, MouseEventArgs e)
+        private void btnHoaDon_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnPointOfSale;
+                Popup.PlacementTarget = btnHoaDon;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
                 Header.PopupText.Text = "Poin Of Sale";
             }
         }
 
-        private void btnPointOfSale_MouseLeave(object sender, MouseEventArgs e)
+        private void btnHoaDon_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
@@ -210,13 +210,25 @@ namespace Minimart_Project_WPF.Views
             fContainer.Navigate(new System.Uri("Views/Home.xaml", UriKind.RelativeOrAbsolute));
         }
 
-        private void btnDashboard_Click(object sender, RoutedEventArgs e)
+        private void btnSanPham_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Views/Dashboard.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(new System.Uri("Views/SanPhamPage.xaml", UriKind.RelativeOrAbsolute));
         }
         private void btnBanHang_Click(object sender, RoutedEventArgs e)
         {
             fContainer.Navigate(new System.Uri("Views/BanHangPage.xaml", UriKind.RelativeOrAbsolute));
+        }
+        private void btnLoaiSanPham_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Views/LoaiSanPhamPage.xaml", UriKind.RelativeOrAbsolute));
+        }
+        private void btnKhachHang_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Views/KhachHangPage.xaml", UriKind.RelativeOrAbsolute));
+        }
+        private void btnKhoHang_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Views/KhoHangPage.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

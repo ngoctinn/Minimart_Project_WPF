@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace Minimart_Project_WPF.Views
 {
     /// <summary>
-    /// Interaction logic for LoaiSanPhamPage.xaml
+    /// Interaction logic for HoaDonPage.xaml
     /// </summary>
-    public partial class LoaiSanPhamPage : Page
+    public partial class HoaDonPage : Page
     {
-        public LoaiSanPhamPage()
+        public HoaDonPage()
         {
             InitializeComponent();
         }
-
     }
 }
