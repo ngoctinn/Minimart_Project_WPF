@@ -14,29 +14,8 @@ FontFamily="{materialDesign:MaterialDesignFont}"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="KhachHangPage">
 
-    <Grid>
-        <materialDesign:FlipperClassic
-  IsFlippedChanged="Flipper_OnIsFlippedChanged">
-            <materialDesign:FlipperClassic.FrontContent>
-                <Button
-      Width="184"
-      Margin="8"
-      materialDesign:ButtonAssist.CornerRadius="8"
-      Command="{x:Static materialDesign:FlipperClassic.FlipCommand}"
-      Content="Rounded Flipper"
-      Style="{StaticResource MaterialDesignFlatButton}" />
-            </materialDesign:FlipperClassic.FrontContent>
-            <materialDesign:FlipperClassic.BackContent>
-                <Button
-      Width="184"
-      Margin="8"
-      materialDesign:ButtonAssist.CornerRadius="8"
-      Command="{x:Static materialDesign:FlipperClassic.FlipCommand}"
-      Content="GO BACK"
-      Style="{StaticResource MaterialDesignFlatButton}" />
-            </materialDesign:FlipperClassic.BackContent>
-        </materialDesign:FlipperClassic>
-    </Grid>
+    
+    
     
     
 </Page>

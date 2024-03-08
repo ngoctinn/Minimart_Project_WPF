@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:Minimart_Project_WPF"
         mc:Ignorable="d" Name="home"
         DataContext="{StaticResource LoginVM}"
-        Title="MainWindow" Height="650" Width="1000"
+        Title="MainWindow" Height="750" Width="1200"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         Background="Transparent" AllowsTransparency="True"
         ResizeMode="NoResize" FontFamily="Poppins">
@@ -52,32 +52,32 @@
                     <!-- Start: MenuItem -->
                     <StackPanel Grid.Row="1" Margin="-1 40 0 20">
                         <Button x:Name="btnHome" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnHome_MouseEnter" MouseLeave="btnHome_MouseLeave" Click="btnHome_Click">
-                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource home}" IconWidth="16" Text="Thống kê" VerticalAlignment="Center" />
+                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource home}" IconWidth="25" Text="Thống kê" VerticalAlignment="Center" />
                         </Button>
                         <Button x:Name="btnBanHang" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnBanHang_MouseEnter" MouseLeave="btnBanHang_MouseLeave" Click="btnBanHang_Click">
-                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource banhang}" IconWidth="20" Text="Bán hàng" VerticalAlignment="Center"/>
+                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource banhang}" IconWidth="25" Text="Bán hàng" VerticalAlignment="Center"/>
                         </Button>
                         <Button x:Name="btnSanPham" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnSanPham_MouseEnter" MouseLeave="btnSanPham_MouseLeave" Click="btnSanPham_Click">
-                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource products}" IconWidth="20" Text="Sản Phẩm" VerticalAlignment="Center"/>
+                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource products}" IconWidth="25" Text="Sản Phẩm" VerticalAlignment="Center"/>
                         </Button>
 
                         <Button x:Name="btnLoaiSanPham" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnLoaiSanPham_MouseEnter" MouseLeave="btnLoaiSanPham_MouseLeave" Click="btnLoaiSanPham_Click">
-                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource loaisanpham}" IconWidth="20" Text="Loại sản phẩm" VerticalAlignment="Center"/>
+                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource loaisanpham}" IconWidth="25" Text="Loại sản phẩm" VerticalAlignment="Center"/>
                         </Button>
                         <Button x:Name="btnKhachHang" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnKhachHang_MouseEnter" MouseLeave="btnKhachHang_MouseLeave" Click="btnKhachHang_Click">
-                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource email}" IconWidth="20" Text="Hoá đơn" VerticalAlignment="Center"/>
+                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource khachhang}" IconWidth="25" Text="Hoá đơn" VerticalAlignment="Center"/>
                         </Button>
                         <Button x:Name="btnHoaDon" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnHoaDon_MouseEnter" MouseLeave="btnHoaDon_MouseLeave">
-                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource car}" IconWidth="20" Text="Khuyến mãi" VerticalAlignment="Center"/>
+                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource car}" IconWidth="25" Text="Khuyến mãi" VerticalAlignment="Center"/>
                         </Button>
                         <Button x:Name="btnKhoHang" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnKhoHang_MouseEnter" MouseLeave="btnKhoHang_MouseLeave" Click="btnKhoHang_Click">
-                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource billing}" IconWidth="20" Text="Khách hàng" VerticalAlignment="Center"/>
+                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource billing}" IconWidth="25" Text="Khách hàng" VerticalAlignment="Center"/>
                         </Button>
                         <Button x:Name="btnSecurity" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnSecurity_MouseEnter" MouseLeave="btnSecurity_MouseLeave">
-                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource lock}" IconWidth="20" Text="Nhập kho" VerticalAlignment="Center"/>
+                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource lock}" IconWidth="25" Text="Nhập kho" VerticalAlignment="Center"/>
                         </Button>
                         <Button x:Name="btnSetting" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnSetting_MouseEnter" MouseLeave="btnSetting_MouseLeave">
-                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource settings}" IconWidth="20" Text="Xuất kho" VerticalAlignment="Center"/>
+                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource settings}" IconWidth="25" Text="Xuất kho" VerticalAlignment="Center"/>
                         </Button>
                     </StackPanel>
                     <!-- End: MenuItem -->
@@ -94,8 +94,9 @@
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60"/>
-                    <RowDefinition Height="83*"/>
-                    <RowDefinition Height="212*"/>
+                    <RowDefinition Height="194*"/>
+                    <RowDefinition Height="231*"/>
+                    <RowDefinition Height="264*"/>
                 </Grid.RowDefinitions>
 
                 <ToggleButton  x:Name="Tg_Btn" VerticalAlignment="Center" Style="{StaticResource MaterialDesignHamburgerToggleButton}" HorizontalAlignment="Left" BorderThickness="0" Background="Transparent" Margin="4,0,0,0" Height="30" Width="30">
@@ -141,7 +142,7 @@
                 <Frame Grid.Row="1"
                        Name="fContainer"
                        Margin="15,15,15,15"
-                       NavigationUIVisibility="Hidden" Grid.RowSpan="2">
+                       NavigationUIVisibility="Hidden" Grid.RowSpan="3">
 
                 </Frame>
 
