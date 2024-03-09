@@ -5,11 +5,91 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Minimart_Project_WPF.Views"
       mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    Background="Transparent"
+    TextElement.FontWeight="Regular"
+    TextElement.FontSize="12"
+    FontFamily="{materialDesign:MaterialDesignFont}"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SanPhamPage">
 
-    <Border CornerRadius="5" Background="LightCoral">
-        <TextBlock Text="Sản Phẩm" FontSize="30" Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"
-           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    <Border Background="White" BorderBrush="Black" BorderThickness="0" CornerRadius="20">
+        <Grid  Margin="15 15 15 15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Margin="15,0,0,0" Grid.Row="0"  TextAlignment="Left" FontSize="30" FontWeight="Bold"  > Sản phẩm</TextBlock>
+            <Grid Width="150" HorizontalAlignment="Right" Margin="0 0 15 0">
+                <Button
+                    Background="#FFFF4081"
+                    Height="30"
+                    materialDesign:ButtonAssist.CornerRadius="5"
+                    
+                    Style="{StaticResource MaterialDesignFlatSecondaryLightBgButton}"
+                    ToolTip="MaterialDesignRaisedButton with Round Corners">
+                    <TextBlock Text="Thêm sản phẩm" Foreground="White"/>
+                </Button>
+            </Grid>
+
+            <!--Seprator-->
+            <Separator  Height="1" Grid.Row="3" Background="#DAE2EA" Margin="0 5 0 5"/>
+
+            <!--Filter Textbox-->
+
+            
+            <StackPanel Margin="0 0 15 0" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal" FlowDirection="LeftToRight">
+                <TextBox
+                    Panel.ZIndex="1"
+                    Height="40"
+                    Width="300"
+                    FontSize="14"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                  materialDesign:HintAssist.Hint="Nhập sản phẩm cần tìm"
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </StackPanel>
+            <DataGrid Grid.Row="5" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" x:Name="membersDataGrid" Style="{DynamicResource DataGridStyle1}">
+                <DataGrid.Columns>
+                    <!--Checkbox-->
+                    <DataGridCheckBoxColumn Header="C" CanUserResize="False" Width="auto" ElementStyle="{StaticResource CheckBoxStyle1}">
+                        <DataGridCheckBoxColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <CheckBox Style="{StaticResource CheckBoxStyle1}"/>
+                            </DataTemplate>
+                        </DataGridCheckBoxColumn.HeaderTemplate>
+                    </DataGridCheckBoxColumn>
+                    <!--#-->
+                    <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Number}"/>
+                    <!--Member-->
+                    <DataGridTextColumn Header="Member" Binding="{Binding member}" IsReadOnly="True" Width="*"/>
+                    <DataGridTextColumn Header="Position" Binding="{Binding Position}" IsReadOnly="True" Width="*"/>
+                    <DataGridTextColumn Header="Email Address" Binding="{Binding Email}" IsReadOnly="True" Width="*"/>
+                    <DataGridTextColumn Header="Phone Number" Binding="{Binding Phone}" IsReadOnly="True" Width="*"/>
+                    <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource gridEditButton}">
+                                        <materialDesign:PackIcon Kind="PencilOutline" />
+                                    </Button>
+                                    <Button Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}">
+                                        <materialDesign:PackIcon Kind="Delete" />
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
     </Border>
+
 </Page>

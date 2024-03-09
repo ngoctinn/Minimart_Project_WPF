@@ -15,7 +15,7 @@
     <!-- By Jeyderht 
         Subscribe: https://www.youtube.com/channel/UC9di50E_9m9pQcZPxzFqYUA/about
         -->
-    <Border Background="WhiteSmoke"
+    <Border Background="#FFFFEFF4"
             CornerRadius="8">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -93,7 +93,7 @@
 
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="40"/>
                     <RowDefinition Height="194*"/>
                     <RowDefinition Height="231*"/>
                     <RowDefinition Height="264*"/>
@@ -143,7 +143,7 @@
                        Name="fContainer"
                        Margin="15,15,15,15"
                        NavigationUIVisibility="Hidden" Grid.RowSpan="3">
-
+                       
                 </Frame>
 
             </Grid>
