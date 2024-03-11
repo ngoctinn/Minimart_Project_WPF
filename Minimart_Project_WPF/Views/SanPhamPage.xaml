@@ -57,7 +57,8 @@
                   Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             </StackPanel>
             <DataGrid
-                
+                AutoGenerateColumns="False"
+                TextBlock.TextAlignment="Center"
                 Grid.Row="5" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" x:Name="membersDataGrid" Style="{DynamicResource DataGridStyle1}">
                 <DataGrid.Columns>
                     <!--Checkbox-->
