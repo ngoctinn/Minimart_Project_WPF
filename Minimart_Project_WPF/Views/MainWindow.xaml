@@ -33,20 +33,26 @@
                     </Grid.RowDefinitions>
 
                     <Grid Grid.Row="0">
-                        <Border 
-                              Margin="14 0 0 0"
-                              Width="32" Height="24"
-                              HorizontalAlignment="Left">
-
-                        </Border>
-
-                        <Label Content="Poppins"
-                               Foreground="{DynamicResource PrimaryTextColor}"
-                               FontWeight="Bold"
-                               FontSize="16"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Left"
-                               Margin="60 0 0 0"/>
+                        <ToggleButton  x:Name="Tg_Btn" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource MaterialDesignHamburgerToggleButton}"  BorderThickness="0" Background="Transparent" Margin="0,0,15,0" Height="30" Width="30">
+                            <ToggleButton.Triggers>
+                                <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                    <BeginStoryboard>
+                                        <Storyboard x:Name="HideStackPanel">
+                                            <DoubleAnimation Storyboard.TargetName="GridNav" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="180" To="60" Duration="0:0:0.5">
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                    <BeginStoryboard>
+                                        <Storyboard x:Name="ShowStackPanel">
+                                            <DoubleAnimation Storyboard.TargetName="GridNav" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="60" To="180" Duration="0:0:0.5">
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </ToggleButton.Triggers>
+                        </ToggleButton>
                     </Grid>
 
                     <!-- Start: MenuItem -->
@@ -99,26 +105,7 @@
                     <RowDefinition Height="264*"/>
                 </Grid.RowDefinitions>
 
-                <ToggleButton  x:Name="Tg_Btn" VerticalAlignment="Center" Style="{StaticResource MaterialDesignHamburgerToggleButton}" HorizontalAlignment="Left" BorderThickness="0" Background="Transparent" Margin="4,0,0,0" Height="30" Width="30">
-                    <ToggleButton.Triggers>
-                        <EventTrigger RoutedEvent="ToggleButton.Unchecked">
-                            <BeginStoryboard>
-                                <Storyboard x:Name="HideStackPanel">
-                                    <DoubleAnimation Storyboard.TargetName="GridNav" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="210" To="60" Duration="0:0:0.5">
-                                    </DoubleAnimation>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <EventTrigger RoutedEvent="ToggleButton.Checked">
-                            <BeginStoryboard>
-                                <Storyboard x:Name="ShowStackPanel">
-                                    <DoubleAnimation Storyboard.TargetName="GridNav" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="60" To="210" Duration="0:0:0.5">
-                                    </DoubleAnimation>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </ToggleButton.Triggers>
-                </ToggleButton>
+                
 
                 <!-- Start: Button Close | Restore | Minimize -->
                 <StackPanel Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft">
