@@ -18,7 +18,7 @@
             <Grid>
                 <Grid.Resources>
                     <Style TargetType="Grid">
-                        <Setter Property="Margin" Value="8 8 8 8"></Setter>
+                       <Setter Property="Margin" Value="8 8 8 8"></Setter>
                     </Style>
                 </Grid.Resources>
                 <Grid.RowDefinitions>
