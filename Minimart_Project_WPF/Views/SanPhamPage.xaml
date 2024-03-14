@@ -26,61 +26,109 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Margin="15,0,0,0" Grid.Row="0"  TextAlignment="Left" FontSize="30" FontWeight="Bold"  > Sản phẩm</TextBlock>
-            <Grid Width="150" HorizontalAlignment="Right" Margin="0 0 15 0">
+            <TextBlock Margin="15,0,0,0" Grid.Row="0"  TextAlignment="Left" FontSize="30" FontWeight="Bold"> Sản phẩm</TextBlock>
+            <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Left" Margin="15 0 0  0">
                 <Button
                     Background="#FFFF4081"
                     Height="30"
+                    Width="150"
                     materialDesign:ButtonAssist.CornerRadius="5"
-                    
                     Style="{StaticResource MaterialDesignFlatSecondaryLightBgButton}"
                     ToolTip="MaterialDesignRaisedButton with Round Corners">
                     <TextBlock Text="Thêm sản phẩm" Foreground="White"/>
                 </Button>
-            </Grid>
+                <Button
+                  Width="100"
+                  Height="30"
+                  Margin="5 0 0 0 "
+                  Background="Transparent"
+                  Content="Xuất excel"
+                  materialDesign:ButtonAssist.CornerRadius="5"
+                  Style="{StaticResource MaterialDesignPaperLightButton}"
+                  ToolTip="Resource name: MaterialDesignPaperLightButton" />
+            </StackPanel>
 
             <!--Seprator-->
-            <Separator  Height="1" Grid.Row="3" Background="#DAE2EA" Margin="0 5 0 5"/>
+            <Separator  Height="1" Grid.Row="1" Background="#DAE2EA" Margin="0 5 0 5"/>
 
             <!--Filter Textbox-->
 
             
-            <StackPanel Margin="0 0 15 0" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal" FlowDirection="LeftToRight">
+            <StackPanel Margin="0 0 15 0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal" FlowDirection="LeftToRight">
                 <TextBox
                     Panel.ZIndex="1"
-                    Height="40"
-                    Width="300"
-                    FontSize="14"
+                    Height="50"
+                    Width="500"
+                    FontSize="16"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center"
                   materialDesign:HintAssist.Hint="Nhập sản phẩm cần tìm"
                   Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             </StackPanel>
             <DataGrid
+                CellStyle="{DynamicResource DataGridCellStyle1}"
+                Padding="0 15 0 0"
+                CanUserAddRows="False"
+                Background="White"
+                Style="{StaticResource MaterialDesignDataGrid}"
                 AutoGenerateColumns="False"
                 TextBlock.TextAlignment="Center"
-                Grid.Row="5" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" x:Name="membersDataGrid" Style="{DynamicResource DataGridStyle1}">
+                Grid.Row="3" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" x:Name="membersDataGrid" >
                 <DataGrid.Columns>
                     <!--Checkbox-->
-                    <DataGridCheckBoxColumn  Header="C" CanUserResize="False" Width="auto" ElementStyle="{StaticResource CheckBoxStyle1}">
+                    <DataGridCheckBoxColumn  Header="C" CanUserResize="False" Width="auto" >
                         <DataGridCheckBoxColumn.HeaderTemplate>
                             <DataTemplate>
-                                <CheckBox Style="{StaticResource CheckBoxStyle1}"/>
-                                
+                                <CheckBox  HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </DataTemplate>
                         </DataGridCheckBoxColumn.HeaderTemplate>
                     </DataGridCheckBoxColumn>
                     <!--#-->
-                    <DataGridTextColumn  Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Number}"/>
+                    <DataGridTextColumn  Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Number}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
                     <!--Member-->
-                    <DataGridTextColumn Header="Member" Binding="{Binding member}" IsReadOnly="True" Width="*"/>
-                    <DataGridTextColumn Header="Position" Binding="{Binding Position}" IsReadOnly="True" Width="*"/>
-                    <DataGridTextColumn Header="Email Address" Binding="{Binding Email}" IsReadOnly="True" Width="*"/>
-                    <DataGridTextColumn Header="Phone Number" Binding="{Binding Phone}" IsReadOnly="True" Width="*"/>
+                    <DataGridTextColumn Header="Member" Binding="{Binding member}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Position" Binding="{Binding Position}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Phone Number" Binding="{Binding Phone}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
                     <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <Button Style="{StaticResource gridEditButton}">
                                         <materialDesign:PackIcon Kind="PencilOutline" />
                                     </Button>
