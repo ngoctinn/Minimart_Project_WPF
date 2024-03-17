@@ -9,9 +9,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="img\6-lon-nuoc-ngot-coca-cola-235ml-202306241812480790_300x300.webp" />
+    <None Remove="img\9.png" />
+    <None Remove="img\snack-vi-tao-bien-ostar-goi-152g-202205071432387265.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MaterialDesignColors" Version="3.0.0" />
     <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
     <PackageReference Include="ShowMeTheXAML.MSBuild" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="img\6-lon-nuoc-ngot-coca-cola-235ml-202306241812480790_300x300.webp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="img\snack-vi-tao-bien-ostar-goi-152g-202205071432387265.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

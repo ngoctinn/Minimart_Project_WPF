@@ -4,12 +4,53 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Minimart_Project_WPF.Views"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:uc="clr-namespace:Minimart_Project_WPF.UserControls"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="BanHangPage">
+      Background="White"
+      Title="BanHangPage" d:Height="450" d:Width="800">
 
-    <Border CornerRadius="5" Background="LightBlue">
-        <TextBlock Text="Bán Hàng" FontSize="30" Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"
-           VerticalAlignment="Center" HorizontalAlignment="Center"/>
-    </Border>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="35 0 0 10" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" FlowDirection="LeftToRight">
+            <TextBox
+        Panel.ZIndex="1"
+        Height="50"
+        Width="460"
+        FontSize="16"
+        HorizontalAlignment="Right"
+        VerticalAlignment="Center"
+      materialDesign:HintAssist.Hint="Nhập sản phẩm cần tìm"
+      Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Grid.RowSpan="2" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Left">
+            <WrapPanel Width="495">
+                <uc:ProductUC Width="150"/>
+                <uc:ProductUC Width="150"/>
+                <uc:ProductUC Width="150"/>
+                <uc:ProductUC Width="150"/>
+                <uc:ProductUC Width="150"/>
+                <uc:ProductUC Width="150"/>
+                <uc:ProductUC Width="150"/>
+                <uc:ProductUC Width="150"/>
+                <uc:ProductUC Width="150"/>
+                <uc:ProductUC Width="150"/>
+                <uc:ProductUC Width="150"/>
+                <uc:ProductUC Width="150"/>
+                <uc:ProductUC Width="150"/>
+                <uc:ProductUC Width="150"/>
+            </WrapPanel>
+        </ScrollViewer>
+
+    </Grid>
+    
+
 </Page>

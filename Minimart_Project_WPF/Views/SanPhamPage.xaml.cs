@@ -25,25 +25,51 @@ namespace Minimart_Project_WPF.Views
         public SanPhamPage()
         {
             InitializeComponent();
-            List<Member> members = new List<Member>();
+            List<SanPham> sanpham = new List<SanPham>();
 
-            // Thêm các đối tượng Member vào danh sách
-            members.Add(new Member { Number = 1,member = "Tín", Name = "Alice", Position = "Manager", Email = "alice@example.com", Phone = "0123456789" });
-            members.Add(new Member { Number = 2,member= "Thư", Name = "Bob", Position = "Developer", Email = "bob@example.com", Phone = "9876543210" });
-            members.Add(new Member { Number = 3,member = "Huy", Name = "Charlie", Position = "Designer", Email = "test@gmail.com", Phone = "1234567890" });
-            members.Add(new Member { Number = 4, member = "Tín", Name = "David", Position = "Developer", Email = "test2@gmail.com", Phone = "02937472342" });
-            members.Add(new Member { Number = 5, member = "Tín", Name = "David", Position = "Developer", Email = "t@gmail.com", Phone = "02937472342" });
+            // Thêm các đối tượng sản phẩm vào danh sách
+            sanpham.Add(new SanPham() { maSanPham = 1, tenSanPham = "Bánh mì", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 2, tenSanPham = "Nước ngọt", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "chai" });
+            sanpham.Add(new SanPham() { maSanPham = 3, tenSanPham = "Kẹo", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 4, tenSanPham = "Bánh quy", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 1, tenSanPham = "Bánh mì", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 2, tenSanPham = "Nước ngọt", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "chai" });
+            sanpham.Add(new SanPham() { maSanPham = 3, tenSanPham = "Kẹo", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 4, tenSanPham = "Bánh quy", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 1, tenSanPham = "Bánh mì", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 2, tenSanPham = "Nước ngọt", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "chai" });
+            sanpham.Add(new SanPham() { maSanPham = 3, tenSanPham = "Kẹo", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 4, tenSanPham = "Bánh quy", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 1, tenSanPham = "Bánh mì", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 2, tenSanPham = "Nước ngọt", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "chai" });
+            sanpham.Add(new SanPham() { maSanPham = 3, tenSanPham = "Kẹo", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 4, tenSanPham = "Bánh quy", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 1, tenSanPham = "Bánh mì", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 2, tenSanPham = "Nước ngọt", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "chai" });
+            sanpham.Add(new SanPham() { maSanPham = 3, tenSanPham = "Kẹo", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 4, tenSanPham = "Bánh quy", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 1, tenSanPham = "Bánh mì", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 2, tenSanPham = "Nước ngọt", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "chai" });
+            sanpham.Add(new SanPham() { maSanPham = 3, tenSanPham = "Kẹo", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 4, tenSanPham = "Bánh quy", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 1, tenSanPham = "Bánh mì", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 2, tenSanPham = "Nước ngọt", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "chai" });
+            sanpham.Add(new SanPham() { maSanPham = 3, tenSanPham = "Kẹo", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+            sanpham.Add(new SanPham() { maSanPham = 4, tenSanPham = "Bánh quy", loaiSanPham = "Thực phẩm", soLuong = "100", donVi = "cái" });
+
             // Gán danh sách cho ItemsSource của datagrid
-            membersDataGrid.ItemsSource = members;
+            membersDataGrid.ItemsSource = sanpham;
         }
-        public class Member
+        public class SanPham
         {
-            public string member { get; set; }
-            public int Number { get; set; }
-            public string Name { get; set; }
-            public string Position { get; set; }
-            public string Email { get; set; }
-            public string Phone { get; set; }
+            public int maSanPham { get; set; }
+            public string tenSanPham { get; set; }
+            public string loaiSanPham { get; set; }
+            public string soLuong { get; set; }
+            public string donVi { get; set; }
+            public int giaBan { get; set; }
+            public bool trangThai { get; set; }
         }
+
     }
 }

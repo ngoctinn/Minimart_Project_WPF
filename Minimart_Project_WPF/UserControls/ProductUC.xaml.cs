@@ -13,21 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Minimart_Project_WPF.Views
+namespace Minimart_Project_WPF.UserControls
 {
     /// <summary>
-    /// Interaction logic for BanHangPage.xaml
+    /// Interaction logic for ProductUC.xaml
     /// </summary>
-    public partial class BanHangPage : Page
+    public partial class ProductUC : UserControl
     {
-        public BanHangPage()
+        public ProductUC()
         {
             InitializeComponent();
-        }
-
-        private void ProductUC_SourceUpdated(object sender, DataTransferEventArgs e)
-        {
 
         }
+        
     }
 }
