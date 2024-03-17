@@ -1,7 +1,7 @@
 # 🏪 MiniMart Project - MiniMart Management Software
 
 ## 📃 Description
-A comprehensive C# WPF application meticulously crafted as the final project for the second semester of the 2023-2024 academic year at SGU (Saigon University). This powerful solution seamlessly integrates C#, SQL Server, Entity Framework (EF), MVVM architecture, and the visually stunning MaterialDesign WPF framework, delivering an exceptional mini-mart management experience.
+A C# WPF application for mini-mart management, developed as the final project for the second semester of the 2023-2024 academic year at SGU (Saigon University). Built using C#, SQL Server, Entity Framework (EF), MVVM architecture, and MaterialDesign WPF.
 
 ## ✨ Features
 - 📦 Product category management
@@ -31,6 +31,6 @@ A comprehensive C# WPF application meticulously crafted as the final project for
 If you find this project helpful and would like to support its development, you can buy me a coffee through MOMO: `0397662903`
 
 ## 📫 Contact
-☎️ 0397662903 | 📧 ngoctin.work@gmail.com
+☎️ `0397662903` | 📧 ngoctin.work@gmail.com
 
 Good luck! 🍀
