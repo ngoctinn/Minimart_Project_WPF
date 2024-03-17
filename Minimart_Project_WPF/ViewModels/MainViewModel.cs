@@ -14,4 +14,3 @@ namespace Minimart_Project_WPF.ViewModels
                
         }
     }
-}
