@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Minimart_Project_WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,8 @@ namespace Minimart_Project_WPF.Views
         public MainWindow()
         {
             InitializeComponent();
+
+            LoginViewModel.UserRoleChanged += OnUserRoleChanged;
         }
         private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -229,6 +232,36 @@ namespace Minimart_Project_WPF.Views
         private void btnKhoHang_Click(object sender, RoutedEventArgs e)
         {
             fContainer.Navigate(new System.Uri("Views/KhoHangPage.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        //Thực hiện chức năng phân quyền người dùng 
+        private void OnUserRoleChanged(string role)
+        {
+            switch (role)
+            {
+                case "PQ01":
+                    // Hide the buttons for this role
+                    btnHome.Visibility = Visibility.Collapsed;
+                    
+                    // Repeat for other buttons
+                    break;
+
+                case "PQ02":
+                    // Handle the visibility for this role
+                    break;
+
+                case "PQ03":
+                    // Handle the visibility for this role
+                    break;
+
+                case "PQ04":
+                    // Handle the visibility for this role
+                    break;
+
+                default:
+                    // Handle the visibility for unknown roles
+                    break;
+            }
         }
     }
 }

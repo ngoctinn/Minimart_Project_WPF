@@ -4,13 +4,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Minimart_Project_WPF"
-        mc:Ignorable="d" Name="home"
-        DataContext="{StaticResource LoginVM}"
+        xmlns:local="clr-namespace:Minimart_Project_WPF" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d" Name="mainwindow"
+        DataContext="{StaticResource MainVM}"
         Title="MainWindow" Height="750" Width="1200"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         Background="Transparent" AllowsTransparency="True"
         ResizeMode="NoResize" FontFamily="Poppins">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}"
+                                   CommandParameter="{Binding ElementName=mainwindow}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
 
     <!-- By Jeyderht 
         Subscribe: https://www.youtube.com/channel/UC9di50E_9m9pQcZPxzFqYUA/about

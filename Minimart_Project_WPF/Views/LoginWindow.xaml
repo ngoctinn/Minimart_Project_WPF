@@ -3,13 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
         xmlns:local="clr-namespace:Minimart_Project_WPF"
         mc:Ignorable="d"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignPaper}"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
+        Name="loginwindow"
+        DataContext="{StaticResource LoginVM}"
         FontFamily="{materialDesign:MaterialDesignFont}"
         Title="MainWindow" Height="450" Width="800">
 
@@ -32,6 +35,7 @@
                 </Grid>
                 <Grid Grid.Row="1">
                     <TextBox
+                          Text="{Binding UserName}"
                           VerticalAlignment="Top"
                           materialDesign:HintAssist.HelperText="Helper text"
                           materialDesign:HintAssist.Hint="Tài khoản"
@@ -41,12 +45,20 @@
                 <Grid Grid.Row="2">
                     <StackPanel>
                         <PasswordBox 
+                      Name="FloatingPasswordBox"
                         materialDesign:HintAssist.HelperText="Not bound password"
                         materialDesign:HintAssist.Hint="Mật khẩu"
                         materialDesign:TextFieldAssist.HasClearButton="True"
                         IsEnabled="{Binding ElementName=RevealPasswordOutlinedEnabled, Path=IsChecked}"
                         Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"
-                        VerticalContentAlignment="Bottom" />
+                        VerticalContentAlignment="Bottom" >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="PasswordChanged">
+                                    <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}"
+                                                   CommandParameter="{Binding ElementName=FloatingPasswordBox}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </PasswordBox>
                     </StackPanel>
                 </Grid>
                 
@@ -55,6 +67,8 @@
                           Height="40"
                           FontSize="16"
                           Content="Đăng nhập"
+                          Command="{Binding LoginCommand}"
+                           CommandParameter="{Binding ElementName=loginwindow}"
                           IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                           Style="{StaticResource MaterialDesignFlatSecondaryMidBgButton}"
                           ToolTip="MaterialDesignFlatSecondaryMidBgButton" />

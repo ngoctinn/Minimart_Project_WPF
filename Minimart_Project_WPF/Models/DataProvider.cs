@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Minimart_Project_WPF.Models
 {
-    internal class TestModel
+    public class DataProvider
     {
+       
     }
 }
