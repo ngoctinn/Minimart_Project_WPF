@@ -119,6 +119,22 @@ namespace Minimart_Project_WPF.Views
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
+        private void btnKhuyenMai_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (Tg_Btn.IsChecked == false)
+            {
+                Popup.PlacementTarget = btnKhachHang;
+                Popup.Placement = PlacementMode.Right;
+                Popup.IsOpen = true;
+                Header.PopupText.Text = "Khuyến mãi";
+            }
+        }
+
+        private void btnKhuyenMai_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Popup.Visibility = Visibility.Collapsed;
+            Popup.IsOpen = false;
+        }
 
         private void btnKhoHang_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -154,34 +170,51 @@ namespace Minimart_Project_WPF.Views
             Popup.IsOpen = false;
         }
 
-        private void btnSecurity_MouseEnter(object sender, MouseEventArgs e)
+        private void btnNhapKho_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnSecurity;
+                Popup.PlacementTarget = btnNhapKho;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Security";
+                Header.PopupText.Text = "Nhập Kho";
             }
         }
 
-        private void btnSecurity_MouseLeave(object sender, MouseEventArgs e)
+        private void btnNhapKho_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
-        private void btnSetting_MouseEnter(object sender, MouseEventArgs e)
+        private void btnXuatKho_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnSetting;
+                Popup.PlacementTarget = btnXuatKho;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Setting";
+                Header.PopupText.Text = "Xuất Kho";
             }
         }
 
-        private void btnSetting_MouseLeave(object sender, MouseEventArgs e)
+        private void btnXuatKho_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Popup.Visibility = Visibility.Collapsed;
+            Popup.IsOpen = false;
+        }
+
+        private void btnTaiKhoan_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (Tg_Btn.IsChecked == false)
+            {
+                Popup.PlacementTarget = btnTaiKhoan;
+                Popup.Placement = PlacementMode.Right;
+                Popup.IsOpen = true;
+                Header.PopupText.Text = "Tài khoản";
+            }
+        }
+
+        private void btnTaiKhoan_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
@@ -229,6 +262,10 @@ namespace Minimart_Project_WPF.Views
         {
             fContainer.Navigate(new System.Uri("Views/KhachHangPage.xaml", UriKind.RelativeOrAbsolute));
         }
+        private void btnKhuyenMai_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Views/KhuyenMaiPage.xaml", UriKind.RelativeOrAbsolute));
+        }
         private void btnKhoHang_Click(object sender, RoutedEventArgs e)
         {
             fContainer.Navigate(new System.Uri("Views/KhoHangPage.xaml", UriKind.RelativeOrAbsolute));
@@ -241,13 +278,26 @@ namespace Minimart_Project_WPF.Views
             {
                 case "PQ01":
                     // Hide the buttons for this role
-                    btnHome.Visibility = Visibility.Collapsed;
+                    btnTaiKhoan.Visibility = Visibility.Visible;
+                    btnHome.Visibility = Visibility.Visible;
                     
                     // Repeat for other buttons
                     break;
 
                 case "PQ02":
                     // Handle the visibility for this role
+                    btnHome.Visibility = Visibility.Visible;
+                    btnSanPham.Visibility = Visibility.Visible;
+                    btnBanHang.Visibility = Visibility.Visible;
+                    btnLoaiSanPham.Visibility = Visibility.Visible;
+                    btnKhachHang.Visibility = Visibility.Visible;
+                    btnKhuyenMai.Visibility = Visibility.Visible;
+                    btnKhoHang.Visibility = Visibility.Visible;
+                    btnHoaDon.Visibility = Visibility.Visible;
+                    btnNhapKho.Visibility = Visibility.Visible;
+                    btnXuatKho.Visibility = Visibility.Visible;
+                    btnTaiKhoan.Visibility = Visibility.Visible;
+                    btnHome.Visibility = Visibility.Visible;
                     break;
 
                 case "PQ03":

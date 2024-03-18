@@ -46,7 +46,14 @@
                   materialDesign:ButtonAssist.CornerRadius="5"
                   Style="{StaticResource MaterialDesignPaperLightButton}"
                   ToolTip="Resource name: MaterialDesignPaperLightButton" />
-                
+                <ComboBox
+                    materialDesign:HintAssist.Hint="(float hint)"
+                    Margin="10 0 0 2"
+                    Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                    <ComboBoxItem Content="Item 1" />
+                    <ComboBoxItem Content="Item 2" />
+                    <ComboBoxItem Content="Item 3" />
+                </ComboBox>
             </StackPanel>
 
             <!--Seprator-->

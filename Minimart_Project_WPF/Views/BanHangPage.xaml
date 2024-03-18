@@ -7,50 +7,48 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:uc="clr-namespace:Minimart_Project_WPF.UserControls"
       mc:Ignorable="d" 
-      Background="White"
+      Background="Transparent"
       Title="BanHangPage" d:Height="450" d:Width="800">
-
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <StackPanel Margin="35 0 0 10" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" FlowDirection="LeftToRight">
-            <TextBox
+    <Border Background="White" BorderBrush="Black" BorderThickness="0" CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="5 0 0 10" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" FlowDirection="LeftToRight">
+                <TextBox
         Panel.ZIndex="1"
         Height="50"
         Width="460"
         FontSize="16"
         HorizontalAlignment="Right"
         VerticalAlignment="Center"
-      materialDesign:HintAssist.Hint="Nhập sản phẩm cần tìm"
-      Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-        </StackPanel>
-        <ScrollViewer Grid.Row="1" Grid.RowSpan="2" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Left">
-            <WrapPanel Width="495">
-                <uc:ProductUC Width="150"/>
-                <uc:ProductUC Width="150"/>
-                <uc:ProductUC Width="150"/>
-                <uc:ProductUC Width="150"/>
-                <uc:ProductUC Width="150"/>
-                <uc:ProductUC Width="150"/>
-                <uc:ProductUC Width="150"/>
-                <uc:ProductUC Width="150"/>
-                <uc:ProductUC Width="150"/>
-                <uc:ProductUC Width="150"/>
-                <uc:ProductUC Width="150"/>
-                <uc:ProductUC Width="150"/>
-                <uc:ProductUC Width="150"/>
-                <uc:ProductUC Width="150"/>
-            </WrapPanel>
-        </ScrollViewer>
-
-    </Grid>
-    
-
+        materialDesign:HintAssist.Hint="Nhập sản phẩm cần tìm"
+        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </StackPanel>
+            <ScrollViewer Grid.Row="1" Grid.RowSpan="2" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Left">
+                <WrapPanel Width="495">
+                    <uc:ProductUC Width="150"/>
+                    <uc:ProductUC Width="150"/>
+                    <uc:ProductUC Width="150"/>
+                    <uc:ProductUC Width="150"/>
+                    <uc:ProductUC Width="150"/>
+                    <uc:ProductUC Width="150"/>
+                    <uc:ProductUC Width="150"/>
+                    <uc:ProductUC Width="150"/>
+                    <uc:ProductUC Width="150"/>
+                    <uc:ProductUC Width="150"/>
+                    <uc:ProductUC Width="150"/>
+                    <uc:ProductUC Width="150"/>
+                    <uc:ProductUC Width="150"/>
+                    <uc:ProductUC Width="150"/>
+                </WrapPanel>
+            </ScrollViewer>
+        </Grid>
+    </Border>
 </Page>
