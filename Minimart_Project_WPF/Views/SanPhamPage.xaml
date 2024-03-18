@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Minimart_Project_WPF.Views"
       mc:Ignorable="d" 
+      DataContext="{StaticResource SanPhamVM}"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
     Background="Transparent"
@@ -12,6 +13,7 @@
     TextElement.FontSize="12"
     FontFamily="{materialDesign:MaterialDesignFont}"
       d:DesignHeight="450" d:DesignWidth="800"
+      Name="sanphampage"
       Title="SanPhamPage">
 
     <Border Background="White" BorderBrush="Black" BorderThickness="0" CornerRadius="20">
@@ -78,6 +80,7 @@
                 Padding="0 15 0 0"
                 CanUserAddRows="False"
                 Background="White"
+                ItemsSource="{Binding SanPhams}"
                 Style="{StaticResource MaterialDesignDataGrid}"
                 AutoGenerateColumns="False"
                 TextBlock.TextAlignment="Center"
@@ -92,7 +95,7 @@
                         </DataGridCheckBoxColumn.HeaderTemplate>
                     </DataGridCheckBoxColumn>
                     <!--#-->
-                    <DataGridTextColumn  Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding maSanPham}">
+                    <DataGridTextColumn  Header="#" IsReadOnly="True" CanUserResize="False" Width="70" Binding="{Binding MaSanPham}">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
@@ -101,7 +104,16 @@
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
                     <!--Member-->
-                    <DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding tenSanPham}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding TenSanPham}" IsReadOnly="True" Width="2*">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                                <Setter Property="Margin" Value="5 0 0 0" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Loại sản phẩm" Binding="{Binding MaLoaiSanPham}" IsReadOnly="True" Width="*">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
@@ -109,7 +121,7 @@
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Loại sản phẩm" Binding="{Binding loaiSanPham}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn Header="Đơn vị" Binding="{Binding DonViTinh}" IsReadOnly="True" Width="69">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
@@ -117,7 +129,7 @@
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Đơn vị" Binding="{Binding donVi}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn Header="SL" Binding="{Binding SoLuong}" IsReadOnly="True" Width="50">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
@@ -125,7 +137,7 @@
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Số lượng" Binding="{Binding soLuong}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn Header="Giá Bán" Binding="{Binding GiaBan}" IsReadOnly="True" Width="*">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
@@ -133,19 +145,19 @@
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Giá Bán" Binding="{Binding giaBan}" IsReadOnly="True" Width="*">
+                    <DataGridTextColumn Header="Trạng Thái" Binding="{Binding TrangThai}" IsReadOnly="True" Width="*">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
                                 <Setter Property="VerticalAlignment" Value="Center" />
-                            </Style>
-                        </DataGridTextColumn.ElementStyle>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="Trạng Thái" Binding="{Binding trangThai}" IsReadOnly="True" Width="*">
-                        <DataGridTextColumn.ElementStyle>
-                            <Style TargetType="{x:Type TextBlock}">
-                                <Setter Property="HorizontalAlignment" Value="Center" />
-                                <Setter Property="VerticalAlignment" Value="Center" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding TrangThai}" Value="Chờ xử lý">
+                                        <Setter Property="Foreground" Value="Orange" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding TrangThai}" Value="Đang bán">
+                                        <Setter Property="Foreground" Value="LimeGreen" />
+                                    </DataTrigger>
+                                </Style.Triggers>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>

@@ -63,7 +63,7 @@
 
                     <!-- Start: MenuItem -->
                     <StackPanel Grid.Row="1" Margin="-1 40 0 20">
-                        <Button x:Name="btnHome" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnHome_MouseEnter" MouseLeave="btnHome_MouseLeave" Click="btnHome_Click" Visibility="Collapsed">
+                        <Button x:Name="btnThongKe" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnThongKe_MouseEnter" MouseLeave="btnThongKe_MouseLeave" Click="btnThongKe_Click" Visibility="Collapsed">
                             <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource home}" IconWidth="25" Text="Thống kê" VerticalAlignment="Center" />
                         </Button>
                         <Button x:Name="btnBanHang" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnBanHang_MouseEnter" MouseLeave="btnBanHang_MouseLeave" Click="btnBanHang_Click" Visibility="Collapsed">

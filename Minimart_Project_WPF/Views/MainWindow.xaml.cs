@@ -35,18 +35,18 @@ namespace Minimart_Project_WPF.Views
         }
 
         // Start: MenuLeft PopupButton //
-        private void btnHome_MouseEnter(object sender, MouseEventArgs e)
+        private void btnThongKe_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnHome;
+                Popup.PlacementTarget = btnThongKe;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
                 Header.PopupText.Text = "Home";
             }
         }
 
-        private void btnHome_MouseLeave(object sender, MouseEventArgs e)
+        private void btnThongKe_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
@@ -241,7 +241,7 @@ namespace Minimart_Project_WPF.Views
         }
         // End: Button Close | Restore | Minimize
 
-        private void btnHome_Click(object sender, RoutedEventArgs e)
+        private void btnThongKe_Click(object sender, RoutedEventArgs e)
         {
             fContainer.Navigate(new System.Uri("Views/Home.xaml", UriKind.RelativeOrAbsolute));
         }
@@ -279,14 +279,14 @@ namespace Minimart_Project_WPF.Views
                 case "PQ01":
                     // Hide the buttons for this role
                     btnTaiKhoan.Visibility = Visibility.Visible;
-                    btnHome.Visibility = Visibility.Visible;
+                    btnThongKe.Visibility = Visibility.Visible;
                     
                     // Repeat for other buttons
                     break;
 
                 case "PQ02":
                     // Handle the visibility for this role
-                    btnHome.Visibility = Visibility.Visible;
+                   
                     btnSanPham.Visibility = Visibility.Visible;
                     btnBanHang.Visibility = Visibility.Visible;
                     btnLoaiSanPham.Visibility = Visibility.Visible;
@@ -297,7 +297,7 @@ namespace Minimart_Project_WPF.Views
                     btnNhapKho.Visibility = Visibility.Visible;
                     btnXuatKho.Visibility = Visibility.Visible;
                     btnTaiKhoan.Visibility = Visibility.Visible;
-                    btnHome.Visibility = Visibility.Visible;
+                    btnThongKe.Visibility = Visibility.Visible;
                     break;
 
                 case "PQ03":
