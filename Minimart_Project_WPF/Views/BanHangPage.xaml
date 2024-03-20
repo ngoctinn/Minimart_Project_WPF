@@ -7,6 +7,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:uc="clr-namespace:Minimart_Project_WPF.UserControls"
       mc:Ignorable="d" 
+      DataContext="{StaticResource BanHangVM}"
       Background="Transparent"
       Title="BanHangPage" d:Height="450" d:Width="800">
     <Border Background="White" BorderBrush="Black" BorderThickness="0" CornerRadius="20">
@@ -17,8 +18,9 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Margin="5 0 0 10" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" FlowDirection="LeftToRight">
                 <TextBox
@@ -31,22 +33,21 @@
         materialDesign:HintAssist.Hint="Nhập sản phẩm cần tìm"
         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             </StackPanel>
-            <ScrollViewer Grid.Row="1" Grid.RowSpan="2" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Left">
+            
+            <ScrollViewer Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Left">
                 <WrapPanel Width="495">
-                    <uc:ProductUC Width="150"/>
-                    <uc:ProductUC Width="150"/>
-                    <uc:ProductUC Width="150"/>
-                    <uc:ProductUC Width="150"/>
-                    <uc:ProductUC Width="150"/>
-                    <uc:ProductUC Width="150"/>
-                    <uc:ProductUC Width="150"/>
-                    <uc:ProductUC Width="150"/>
-                    <uc:ProductUC Width="150"/>
-                    <uc:ProductUC Width="150"/>
-                    <uc:ProductUC Width="150"/>
-                    <uc:ProductUC Width="150"/>
-                    <uc:ProductUC Width="150"/>
-                    <uc:ProductUC Width="150"/>
+                    <ItemsControl Width="495" ItemsSource="{Binding Products}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="3"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate >
+                            <DataTemplate>
+                                <uc:ProductUC Width="150"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </WrapPanel>
             </ScrollViewer>
         </Grid>

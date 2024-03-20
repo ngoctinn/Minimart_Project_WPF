@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Minimart_Project_WPF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,5 +26,24 @@ namespace Minimart_Project_WPF.Views
             InitializeComponent();
         }
 
+        private void ThemLoaiSanPham_Click(object sender, RoutedEventArgs e)
+        {
+            if (InputStackPanel.Visibility == Visibility.Collapsed)
+            {
+                InputStackPanel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                InputStackPanel.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void timKiemLoaiSanPham_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var filter = (sender as TextBox).Text.ToLower();
+            var view = CollectionViewSource.GetDefaultView(membersDataGrid.ItemsSource);
+            view.Filter = item => (item as LoaiSanPham).TenLoaiSanPham.ToLower().Contains(filter);
+            view.Refresh();
+        }
     }
 }

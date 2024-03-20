@@ -5,4 +5,7 @@
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
     <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
     <viewmodel:SanPhamViewModel x:Key="SanPhamVM"></viewmodel:SanPhamViewModel>
+    <viewmodel:LoaiSanPhamViewModel x:Key="LoaiSanPhamVM"></viewmodel:LoaiSanPhamViewModel>
+    <viewmodel:BanHangViewModel x:Key="BanHangVM"></viewmodel:BanHangViewModel>
+
 </ResourceDictionary>

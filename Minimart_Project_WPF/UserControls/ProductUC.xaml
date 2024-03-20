@@ -19,14 +19,14 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <Image RenderOptions.BitmapScalingMode="Linear"  Source="\img\6-lon-nuoc-ngot-coca-cola-235ml-202306241812480790_300x300.webp" Grid.Row="0"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="130" Height="80" Margin="0 5 0 5" />
-            <TextBlock Foreground="Gray" FontSize="12" Text="6 lon nước ngọt Coca Cola 320ml" TextWrapping="Wrap" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="5,0 ,0,0" />
-            <TextBlock Foreground="Black" FontWeight="Bold" FontSize="12" Text="60.000đ" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,2,0 0" />
-            <Button FontWeight="Light" Foreground="#FFFF4081" FontSize="12" Background="#FFFFF0F5" BorderBrush="#FFFFF0F5" Content="CHỌN" Grid.Row="3" Grid.ColumnSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
+            <Image RenderOptions.BitmapScalingMode="Linear"  Source="{Binding Anh}" Grid.Row="0"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="130" Height="80" Margin="0 5 0 5" />
+            <TextBlock Foreground="Gray" FontSize="12" Text="{Binding TenSanPham}" TextWrapping="Wrap" TextTrimming="WordEllipsis" MaxHeight="40" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="5,0 ,0, 0" />
+            <TextBlock Foreground="Black" FontWeight="Bold" FontSize="12" Text="{Binding GiaBan}" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,2,0 2" />
+            <Button FontWeight="Light" Foreground="#FFFF4081" FontSize="12" Background="#FFFFF0F5" BorderBrush="#FFFFF0F5" Content="CHỌN" Grid.Row="3" Grid.ColumnSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="0 2 0 0"/>
         </Grid>
     </materialDesign:Card>
 </UserControl>

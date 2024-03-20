@@ -5,12 +5,168 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Minimart_Project_WPF.Views"
       mc:Ignorable="d" 
+      DataContext="{StaticResource LoaiSanPhamVM}"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      Background="Transparent"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="12"
+      FontFamily="{materialDesign:MaterialDesignFont}"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LoaiSanPhamPage">
 
-    <Border CornerRadius="5" Background="LightSeaGreen">
-        <TextBlock Text="Loại sản phẩm" FontSize="30" Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"
-       VerticalAlignment="Center" HorizontalAlignment="Center"/>
-       
+    <Border Background="White" BorderBrush="Black" BorderThickness="0" CornerRadius="20">
+        <Grid  Margin="15 15 15 15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Margin="15,0,0,0" Grid.Row="0"  TextAlignment="Left" FontSize="30" FontWeight="Bold"> Loại sản phẩm</TextBlock>
+            <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Left" Margin="15 0 0  0">
+                <Button
+                x:Name="ThemLoaiSanPham"
+                Background="#FFFF4081"
+                Click="ThemLoaiSanPham_Click"
+                Height="30"
+                Width="160"
+                materialDesign:ButtonAssist.CornerRadius="5"
+                Style="{StaticResource MaterialDesignFlatSecondaryLightBgButton}"
+                ToolTip="MaterialDesignRaisedButton with Round Corners">
+                    <TextBlock Text="Thêm loại sản phẩm" Foreground="White"/>
+                </Button>
+                <Button
+              Width="100"
+              Height="30"
+              Margin="5 0 0 0 "
+              Background="Transparent"
+              Content="Xuất excel"
+              materialDesign:ButtonAssist.CornerRadius="5"
+              Style="{StaticResource MaterialDesignPaperLightButton}"
+              ToolTip="Resource name: MaterialDesignPaperLightButton" />
+                <ComboBox
+                materialDesign:HintAssist.Hint="(float hint)"
+                Margin="10 0 0 2"
+                Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                    <ComboBoxItem Content="Item 1" />
+                    <ComboBoxItem Content="Item 2" />
+                    <ComboBoxItem Content="Item 3" />
+                </ComboBox>
+            </StackPanel>
+
+            <!--Seprator-->
+            <Separator  Height="1" Grid.Row="1" Background="#DAE2EA" Margin="0 5 0 5"/>
+
+            <!--Filter Textbox-->
+
+
+            <StackPanel Margin="0 0 15 0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal" FlowDirection="LeftToRight">
+                <TextBox
+                x:Name="timKiemLoaiSanPham"
+                Panel.ZIndex="1"
+                Height="50"
+                Width="500"
+                FontSize="16"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+              materialDesign:HintAssist.Hint="Nhập sản phẩm cần tìm"
+                 TextChanged="timKiemLoaiSanPham_TextChanged"
+              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </StackPanel>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="32*"/>
+                    <ColumnDefinition Width="203*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <DataGrid
+            CellStyle="{DynamicResource DataGridCellStyle1}"
+            Padding="0 15 0 0"
+            CanUserAddRows="False"
+            Background="White"
+            ItemsSource="{Binding LoaiSanPhams}"
+            Style="{StaticResource MaterialDesignDataGrid}"
+            AutoGenerateColumns="False"
+            TextBlock.TextAlignment="Center"
+            Grid.Column="0"
+            RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" x:Name="membersDataGrid" Grid.ColumnSpan="2" >
+                    <DataGrid.Columns>
+                        <!--Checkbox-->
+                        <DataGridCheckBoxColumn  Header="C" CanUserResize="False" Width="auto" >
+                            <DataGridCheckBoxColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <CheckBox  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridCheckBoxColumn.HeaderTemplate>
+                        </DataGridCheckBoxColumn>
+                        <!--#-->
+                        <DataGridTextColumn  Header="#" IsReadOnly="True" CanUserResize="False" Width="70" Binding="{Binding MaLoaiSanPham}">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="HorizontalAlignment" Value="Center" />
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <!--Member-->
+                        <DataGridTextColumn Header="Tên loại sản phẩm" Binding="{Binding TenLoaiSanPham}" IsReadOnly="True" Width="2*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="HorizontalAlignment" Value="Left" />
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="5 0 0 0" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn Header="Trạng Thái" Binding="{Binding TrangThai}" IsReadOnly="True" Width="*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="HorizontalAlignment" Value="Center" />
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding TrangThai}" Value="Chờ xử lý">
+                                            <Setter Property="Foreground" Value="Orange" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding TrangThai}" Value="Đang bán">
+                                            <Setter Property="Foreground" Value="LimeGreen" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTemplateColumn Header="Hành động" IsReadOnly="True" Width="auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Button Style="{StaticResource gridEditButton}">
+                                            <materialDesign:PackIcon Kind="PencilOutline" />
+                                        </Button>
+                                        <Button Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}">
+                                            <materialDesign:PackIcon Kind="Delete" />
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel x:Name="InputStackPanel" Margin="0,15,0,0" Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <TextBlock Text="Nhập tên sản phẩm" />
+                    <TextBox Style="{DynamicResource MaterialDesignFilledTextBox}" Width="300" />
+                    <TextBlock Text="Nhập mã sản phẩm" Margin="0 15 0 0" />
+                    <TextBox Style="{DynamicResource MaterialDesignFilledTextBox}" Width="300"  IsReadOnly="True"/>
+                    <Button Content="Xác nhận" Width="{Binding ElementName=textBlockTenSanPham, Path=ActualWidth}" Height="30" />
+                </StackPanel>
+            </Grid>
+
+
+        </Grid>
     </Border>
 </Page>
