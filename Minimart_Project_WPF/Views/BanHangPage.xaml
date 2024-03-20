@@ -14,13 +14,13 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
-                <RowDefinition/>
+                <RowDefinition Height ="auto" />
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <StackPanel Margin="5 0 0 10" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" FlowDirection="LeftToRight">
                 <TextBox
@@ -34,7 +34,7 @@
         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             </StackPanel>
             
-            <ScrollViewer Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Left">
+            <ScrollViewer Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="1" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Left">
                 <WrapPanel Width="495">
                     <ItemsControl Width="495" ItemsSource="{Binding Products}">
                         <ItemsControl.ItemsPanel>
@@ -50,6 +50,51 @@
                     </ItemsControl>
                 </WrapPanel>
             </ScrollViewer>
+            
+            <materialDesign:Card Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Background="White" BorderBrush="Black" BorderThickness="1" >
+                <StackPanel Margin="5 5 5 5" Width="1000" Height="200" HorizontalAlignment="Stretch">
+                    
+                        <TextBlock Text="Họ tên:"/>
+                        <TextBox/>
+                        <TextBlock Text="Số điện thoại:"/>
+                        <TextBox/>
+                        <TextBlock Text="Hạng thành viên:"/>
+                        <TextBox/>
+                        <TextBlock Text="Điểm thành viên:"/>
+                        <TextBox/>
+                </StackPanel>
+
+            </materialDesign:Card>
+            <Grid Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Foreground="WhiteSmoke" Width="100" Height="70" Margin=" 3 3 3 3" Grid.Row="0" Grid.Column="0" Content="1.000đ"/>
+                <Button Foreground="WhiteSmoke" Width="100" Height="70" Margin=" 3 3 3 3" Grid.Row="0" Grid.Column="1" Content="2.000đ"/>
+                <Button Foreground="WhiteSmoke" Width="100" Height="70" Margin=" 3 3 3 3" Grid.Row="0" Grid.Column="2" Content="5.000đ"/>
+                <Button Foreground="WhiteSmoke" Width="100" Height="70" Margin=" 3 3 3 3" Grid.Row="1" Grid.Column="0" Content="10.000đ"/>
+                <Button Foreground="WhiteSmoke" Width="100" Height="70" Margin=" 3 3 3 3" Grid.Row="1" Grid.Column="1" Content="20.000đ"/>
+                <Button Foreground="WhiteSmoke" Width="100" Height="70" Margin=" 3 3 3 3" Grid.Row="1" Grid.Column="2" Content="50.000đ"/>
+                <Button Foreground="WhiteSmoke" Width="100" Height="70" Margin=" 3 3 3 3" Grid.Row="2" Grid.Column="0" Content="100.000đ"/>
+                <Button Foreground="WhiteSmoke" Width="100" Height="70" Margin=" 3 3 3 3" Grid.Row="2" Grid.Column="1" Content="200.000đ"/>
+                <Button Foreground="WhiteSmoke" Width="100" Height="70" Margin=" 3 3 3 3" Grid.Row="2" Grid.Column="2" Content="500.000đ"/>
+                <Button Foreground="WhiteSmoke" Width="100" Height="70" Margin=" 5 5 5 5" Grid.Row="3" Grid.Column="0"  Content="Delete"/>
+                <Button Background="Green" BorderBrush="Green" Foreground="WhiteSmoke" Height="70" Margin=" 5 5 5 5" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"  Content="thanh toán"/>
+            </Grid>
         </Grid>
     </Border>
 </Page>
