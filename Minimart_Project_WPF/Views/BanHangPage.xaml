@@ -93,8 +93,8 @@
                 <Button Foreground="WhiteSmoke" Width="100" Height="70" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="3" Grid.Column="0" Content="100.000đ"/>
                 <Button Foreground="WhiteSmoke" Width="100" Height="70" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="3" Grid.Column="1" Content="200.000đ"/>
                 <Button Foreground="WhiteSmoke" Width="100" Height="70" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="3" Grid.Column="2" Content="500.000đ"/>
-                <Button Foreground="WhiteSmoke" Width="100" Height="70" Margin=" 5 5 5 5"  Grid.Row="4" Grid.Column="0"  Content="Delete"/>
-                <Button Background="Green" BorderBrush="Green" Foreground="WhiteSmoke"  Height="70" Margin=" 5 5 5 5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"  Content="thanh toán"/>
+                <Button Foreground="WhiteSmoke" Width="100" Height="70" Margin=" 5 5 5 5" Click="Button_Delete_Click" Grid.Row="4" Grid.Column="0"  Content="Delete"/>
+                <Button Background="Green" BorderBrush="Green" Foreground="WhiteSmoke"   Height="70" Margin=" 5 5 5 5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"  Content="thanh toán"/>
             </Grid>
         </Grid>
     </Border>

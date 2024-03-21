@@ -41,9 +41,14 @@ namespace Minimart_Project_WPF.Views
                 if (int.TryParse(moneyString, out moneyValue))
                 {
                     totalMoney += moneyValue;
-                    TotalMoneyTextBlock.Text = string.Format("Số tiền khách đưa:"+"{0:N0}đ", totalMoney);
+                    TotalMoneyTextBlock.Text = string.Format("Số tiền khách đưa: "+"{0:N0}đ", totalMoney);
                 }
             }
+        }
+
+        private void Button_Delete_Click(object sender, RoutedEventArgs e)
+        {
+            TotalMoneyTextBlock.Text = "Số tiền khách đưa: 0đ";
         }
     }
 }

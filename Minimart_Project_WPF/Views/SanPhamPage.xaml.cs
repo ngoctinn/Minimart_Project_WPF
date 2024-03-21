@@ -1,4 +1,5 @@
 ﻿using Minimart_Project_WPF.Models;
+using Minimart_Project_WPF.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -36,5 +37,14 @@ namespace Minimart_Project_WPF.Views
             view.Filter = item => (item as SanPham).TenSanPham.ToLower().Contains(filter);
             view.Refresh();
         }
+
+        private void Button_Click_ThemSanPham(object sender, RoutedEventArgs e)
+        {
+           ChiTietSanPham chiTietSanPham = new ChiTietSanPham();
+            chiTietSanPham.ShowDialog();
+          
+        }
+
+        
     }
 }
