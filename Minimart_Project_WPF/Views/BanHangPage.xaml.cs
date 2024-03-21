@@ -20,6 +20,7 @@ namespace Minimart_Project_WPF.Views
     /// </summary>
     public partial class BanHangPage : Page
     {
+        private int totalMoney = 0;
         public BanHangPage()
         {
             InitializeComponent();
@@ -28,6 +29,21 @@ namespace Minimart_Project_WPF.Views
         private void ProductUC_SourceUpdated(object sender, DataTransferEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            if (button != null)
+            {
+                string moneyString = button.Content.ToString().Replace("đ", "").Replace(".", "");
+                int moneyValue;
+                if (int.TryParse(moneyString, out moneyValue))
+                {
+                    totalMoney += moneyValue;
+                    TotalMoneyTextBlock.Text = string.Format("Số tiền khách đưa:"+"{0:N0}đ", totalMoney);
+                }
+            }
         }
     }
 }
