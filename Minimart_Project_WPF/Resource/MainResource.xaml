@@ -7,5 +7,6 @@
     <viewmodel:SanPhamViewModel x:Key="SanPhamVM"></viewmodel:SanPhamViewModel>
     <viewmodel:LoaiSanPhamViewModel x:Key="LoaiSanPhamVM"></viewmodel:LoaiSanPhamViewModel>
     <viewmodel:BanHangViewModel x:Key="BanHangVM"></viewmodel:BanHangViewModel>
+    <viewmodel:KhachHangViewModel x:Key="KhachHangVM"></viewmodel:KhachHangViewModel>
 
 </ResourceDictionary>

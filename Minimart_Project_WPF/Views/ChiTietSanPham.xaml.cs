@@ -22,6 +22,7 @@ namespace Minimart_Project_WPF.Views
         public ChiTietSanPham()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen; // Set the startup location of the window to the center of the screen
         }
     }
 }
