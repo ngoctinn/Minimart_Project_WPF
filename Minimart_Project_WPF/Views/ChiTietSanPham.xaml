@@ -4,16 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Minimart_Project_WPF.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:uc="clr-namespace:Minimart_Project_WPF.UserControls"
         mc:Ignorable="d"
-        Title="ChiTietSanPham" Height="600" Width="800"
+        Title="ChiTietSanPham" Height="650" Width="544"
         ResizeMode="NoResize">
-    <Border CornerRadius="7" Background="#ffffff" >
+ 
+    <Border CornerRadius="7" Background="White" Margin="0,0,0,33" >
         <Border.Effect>
             <DropShadowEffect Direction="-130" BlurRadius="30" ShadowDepth="5" Opacity="0.1"/>
         </Border.Effect>
 
-        <Grid Margin="20 0">
+        <Grid Margin="20,2,20,-59">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -21,26 +23,19 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            
 
             <!--Form Title-->
-            <StackPanel Orientation="Horizontal" Margin="20 20 0 0">
-                <Border CornerRadius="50" BorderThickness="1.5" BorderBrush="#EFEFEF">
-                    <Ellipse Width="40" Height="40">
-                        <Ellipse.Fill>
-                            <ImageBrush/>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                </Border>
+            
 
-                <TextBlock Text="Chi tiết sản phẩm" Foreground="#374655" FontSize="18" Margin="15 0 0 0" VerticalAlignment="Center"/>
-            </StackPanel>
+                <TextBlock Text="Chi tiết sản phẩm" Foreground="#374655" FontSize="28" Margin="15 15 0 0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            
 
             <!--Form Percentage-->
             
@@ -48,26 +43,25 @@
             <Separator Grid.Row="1" Grid.ColumnSpan="2" Height="0.7" Margin="-20 20 -20 20" Background="#E1E6EB"/>
 
             <!--Inputs-->
-            <uc:MyTextBoxUC Grid.Column="0" Grid.Row="2" Caption="Mã sản phẩm" Hint=""/>
-            <uc:MyTextBoxUC Grid.Column="0" Grid.Row="3" Caption="Tên sản phẩm" Hint="Enter your email"/>
-            <uc:MyTextBoxUC Grid.Column="0" Grid.Row="4" Caption="Loại sản phẩm" Hint="Enter your phone"/>
-            <uc:MyTextBoxUC Grid.Column="0" Grid.Row="5" Caption="Đơn vị tính" Hint="Enter your address"/>
-            <uc:MyTextBoxUC Grid.Column="1" Grid.Row="2" Caption="Business Name" Hint="Enter your business name"/>
-            <uc:MyTextBoxUC Grid.Column="1" Grid.Row="3" Caption="Account Email" Hint="Enter your email"/>
-            <uc:MyTextBoxUC Grid.Column="1" Grid.Row="4" Caption="Currency" Hint="Enter your currnecy"/>
-            <uc:MyTextBoxUC Grid.Column="1" Grid.Row="5" Caption="Address (Line 2)" Hint="Enter your address"/>
+            <TextBox Height="50" FontSize="13" materialDesign:HintAssist.Background="White"  materialDesign:HintAssist.Hint="Mã sản phẩm" Grid.Row="2" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <TextBox Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Tên sản phẩm" Grid.Row="3" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <ComboBox Height="50" FontSize="13" materialDesign:HintAssist.Background="White"  materialDesign:HintAssist.Hint="Loại sản phẩm" Grid.Row="4" Style="{StaticResource MaterialDesignOutlinedComboBox}" ></ComboBox>
+            <TextBox Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Đơn vị tính" Grid.Row="5" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <TextBox Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Giá bán" Grid.Row="6" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <TextBox Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Số lượng" Grid.Row="7" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <TextBox Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Trạng thái" Grid.Row="8" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            
             <!--Form Bottom Background-->
-            <Border Grid.Row="6" Grid.ColumnSpan="2" Height="80" Background="#f6f6f6" CornerRadius="0 0 10 10" Margin="-20 40 -20 0"/>
-
+            <Border Grid.Row="10" Grid.ColumnSpan="2" Height="80" Background="WhiteSmoke" CornerRadius="0 0 10 10" Margin="-20 0 -20 20"/>
             <!--Main Button-->
-            <Button Grid.Column="1" Grid.Row="6" Content="Save Next" HorizontalAlignment="Right" Margin="0 40 20 0" Style="{StaticResource mainButton}">
+            <Button Grid.Column="1" Grid.Row="10" Content="Xác nhận" HorizontalAlignment="Right" Margin="0 -15 20 0" Style="{StaticResource mainButton}">
                 <Button.Effect>
                     <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
                 </Button.Effect>
             </Button>
 
             <!--Secondary Button-->
-            <Button Grid.Row="6" Content="Back" HorizontalAlignment="Left" Margin="20 40 0 0" Style="{StaticResource secondaryButton}" Width="150"/>
+            <Button Grid.Row="10" Content="Trở về" HorizontalAlignment="Left" Margin="20 -15 0 0" Style="{StaticResource secondaryButton}" />
 
         </Grid>
     </Border>

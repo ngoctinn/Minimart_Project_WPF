@@ -66,63 +66,7 @@
 
             </materialDesign:Card>
             <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2">
-                <TabControl x:Name="MyTabControl" HorizontalAlignment="Stretch" Background="Transparent">
-                    <TabItem>
-                        <TabItem.Header>
-                                <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Giỏ hàng 1" Margin="0,2,40,0"/>
-                                <Button
-                                  Height="25"
-                                  Width="25"
-                                  HorizontalAlignment="Right"
-                                  VerticalAlignment="Center"
-                                  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                                  Style="{StaticResource MaterialDesignIconForegroundButton}"
-                                  ToolTip="MaterialDesignIconForegroundButton"
-                                  Click="CloseTab_Click">
-                                  <materialDesign:PackIcon Kind="Close" Height="20" Width="20"/>
-                                </Button>
-                            </StackPanel>
-                        </TabItem.Header>
-                        <materialDesign:Card Background="Transparent">
-                            <!-- Content for Tab 1 -->
-                        </materialDesign:Card>
-                    </TabItem>
-                    <TabItem>
-                        <TabItem.Header>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Giỏ hàng 2" Margin="0,2,40,0"/>
-                                <Button
-                                  Height="25"
-                                  Width="25"
-                                  HorizontalAlignment="Right"
-                                  VerticalAlignment="Center"
-                                  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                                  Style="{StaticResource MaterialDesignIconForegroundButton}"
-                                  ToolTip="MaterialDesignIconForegroundButton"
-                                  Click="CloseTab_Click">
-                                  <materialDesign:PackIcon Kind="Close" Height="20" Width="20"/>
-                                </Button>
-                            </StackPanel>
-                        </TabItem.Header>
-                        <!-- Content for Tab 2 -->
-                    </TabItem>
-                    <TabItem Width="40">
-                        <TabItem.Header>
-                            <Button
-                              Height="30"
-                              Width="30"
-                              HorizontalAlignment="Center"
-                              VerticalAlignment="Center"
-                              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                              Style="{StaticResource MaterialDesignIconForegroundButton}"
-                              ToolTip="MaterialDesignIconForegroundButton"
-                              Click="AddTab_Click">
-                                <materialDesign:PackIcon Kind="PlusThick" Height="30" Width="30"/>
-                            </Button>
-                        </TabItem.Header>
-                    </TabItem>
-                </TabControl>
+                
             </Grid>
             <Grid Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" >
                 <Grid.RowDefinitions>
@@ -143,17 +87,61 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Name="TotalMoneyTextBlock" Grid.Row="0" Grid.ColumnSpan="3" Text="Số tiền khách đưa:"/>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click"  Grid.Row="1" Grid.Column="0" Content="1.000đ"/>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="1" Grid.Column="1" Content="2.000đ"/>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="1" Grid.Column="2" Content="5.000đ"/>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="2" Grid.Column="0" Content="10.000đ"/>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="2" Grid.Column="1" Content="20.000đ"/>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="2" Grid.Column="2" Content="50.000đ"/>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="3" Grid.Column="0" Content="100.000đ"/>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="3" Grid.Column="1" Content="200.000đ"/>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="3" Grid.Column="2" Content="500.000đ"/>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 5 5 5 5" Click="Button_Delete_Click" Grid.Row="4" Grid.Column="0"  Content="Delete"/>
-                <Button Background="Green" BorderBrush="Green" Foreground="WhiteSmoke"   Height="70" Margin=" 5 5 5 5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"  Content="thanh toán"/>
+                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click"  Grid.Row="1" Grid.Column="0" Content="1.000đ" Style="{StaticResource mainButton}">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
+                    </Button.Effect>
+                </Button>
+                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="1" Grid.Column="1" Content="2.000đ" Style="{StaticResource mainButton}">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
+                    </Button.Effect>
+                </Button>
+                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="1" Grid.Column="2" Content="5.000đ" Style="{StaticResource mainButton}">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
+                    </Button.Effect>
+                </Button>
+                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="2" Grid.Column="0" Content="10.000đ" Style="{StaticResource mainButton}">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
+                    </Button.Effect>
+                </Button>
+                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="2" Grid.Column="1" Content="20.000đ" Style="{StaticResource mainButton}">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
+                    </Button.Effect>
+                </Button>
+                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="2" Grid.Column="2" Content="50.000đ" Style="{StaticResource mainButton}">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
+                    </Button.Effect>
+                </Button>
+                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="3" Grid.Column="0" Content="100.000đ" Style="{StaticResource mainButton}">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
+                    </Button.Effect>
+                </Button>
+                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="3" Grid.Column="1" Content="200.000đ" Style="{StaticResource mainButton}">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
+                    </Button.Effect>
+                </Button>
+                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="3" Grid.Column="2" Content="500.000đ" Style="{StaticResource mainButton}">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
+                    </Button.Effect>
+                </Button>
+                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 5 5 5 5" Click="Button_Delete_Click" Grid.Row="4" Grid.Column="0"  Content="Delete" Style="{StaticResource mainButton}">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
+                    </Button.Effect>
+                </Button>
+                <Button Background="Green" BorderBrush="Green" Foreground="WhiteSmoke"   Height="70" Margin=" 5 5 5 5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"  Content="thanh toán" Style="{StaticResource mainButton}">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
+                    </Button.Effect>
+                </Button>
             </Grid>
         </Grid>
     </Border>
