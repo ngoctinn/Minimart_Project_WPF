@@ -15,6 +15,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height ="*" />
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -34,7 +35,7 @@
         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             </StackPanel>
             
-            <ScrollViewer Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="1" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Left">
+            <ScrollViewer Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="1" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Left">
                 <WrapPanel Width="495">
                     <ItemsControl Width="495" ItemsSource="{Binding Products}">
                         <ItemsControl.ItemsPanel>
@@ -51,34 +52,56 @@
                 </WrapPanel>
             </ScrollViewer>
 
-            <materialDesign:Card Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Background="White" BorderBrush="Black" BorderThickness="1" >
-                <StackPanel Margin="5 5 5 5" Width="1000" Height="200" HorizontalAlignment="Stretch">
-                    <Grid>
+            <materialDesign:Card Grid.Row="3" Height="220" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Background="White" Margin="5" >
+                    <Grid Margin="10" Width="290">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="Khách hàng thành viên" FontSize="25" FontWeight="DemiBold" Grid.Row="0" Grid.ColumnSpan="2"/>
+                        <TextBlock Text="Khách hàng thành viên" FontSize="20" FontWeight="DemiBold" Grid.Row="0" Grid.ColumnSpan="2"/>
                         <TextBlock Text="Họ tên:" FontSize="15" FontWeight="DemiBold"  Grid.Row="1" Grid.Column="0"/>
-                        <TextBlock Text="Nguyễn Ngọc Tín" FontSize="15" Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock Text="Nguyễn Ngọc Tín" FontSize="15" Grid.Row="1" Grid.Column="1" Margin="10 0 0 0"/>
                         <TextBlock Text="Số điện thoại:" FontSize="15" FontWeight="DemiBold"  Grid.Row="2" Grid.Column="0"/>
-                        <TextBlock Text="0397662903" FontSize="15" Grid.Row="2" Grid.Column="1"/>
+                        <TextBlock Text="0397662903" FontSize="15" Grid.Row="2" Grid.Column="1" Margin="10 0 0 0"/>
                         <TextBlock Text="Hạng thành viên:" FontSize="15" FontWeight="DemiBold"  Grid.Row="3" Grid.Column="0"/>
-                        <TextBlock Text="Vàng" FontSize="15" Grid.Row="3" Grid.Column="1"/>
+                        <TextBlock Text="Vàng" FontSize="15" Grid.Row="3" Grid.Column="1" Margin="10 0 0 0"/>
                         <TextBlock Text="Điểm thành viên:"  FontSize="15" FontWeight="DemiBold"  Grid.Row="4" Grid.Column="0"/>
-                        <TextBlock Text="3000" FontSize="15" Grid.Row="4" Grid.Column="1"/>
+                        <TextBlock Text="3000" FontSize="15" Grid.Row="4" Grid.Column="1"  Margin="10 0 0 0"/>
                     </Grid>
-                </StackPanel>
             </materialDesign:Card>
-            <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2">
-                
+            <Grid Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="5">
+                <StackPanel>
+                    <uc:ProductDetailUC></uc:ProductDetailUC>
+                    <uc:ProductDetailUC></uc:ProductDetailUC>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Margin="5 60 5 5">
+                <materialDesign:Card Background="White" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="Tạm tính:" FontSize="16" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                        <TextBlock Text="Giảm giá:" FontSize="16" Grid.Row="0" Grid.Column="1" Margin="4"/>
+                        <TextBlock Text="Tổng tiền:" FontSize="16" Grid.Row="1" Grid.ColumnSpan="2" Margin="5"/>
+                        <TextBlock x:Name="TotalMoneyTextBlock"  Text="Khách đưa:" FontSize="18" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                        <TextBlock Text="Tiền thừa:" FontSize="18" Grid.Row="2" Grid.Column="1" Margin="5"/>
+                    </Grid>
+                </materialDesign:Card>
             </Grid>
             <Grid Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" >
                 <Grid.RowDefinitions>
@@ -98,60 +121,61 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock x:Name="TotalMoneyTextBlock" Grid.Row="0" Grid.ColumnSpan="3" Text="Số tiền khách đưa:"/>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click"  Grid.Row="1" Grid.Column="0" Content="1.000đ" Style="{StaticResource mainButton}">
+                
+                
+                <Button Foreground="WhiteSmoke" Width="90" Height="50" Margin=" 3 3 3 3" Click="Button_Click"  Grid.Row="1" Grid.Column="0" Content="1.000đ" Style="{StaticResource mainButton}">
                     <Button.Effect>
                         <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
                     </Button.Effect>
                 </Button>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="1" Grid.Column="1" Content="2.000đ" Style="{StaticResource mainButton}">
+                <Button Foreground="WhiteSmoke" Width="90" Height="50" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="1" Grid.Column="1" Content="2.000đ" Style="{StaticResource mainButton}">
                     <Button.Effect>
                         <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
                     </Button.Effect>
                 </Button>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="1" Grid.Column="2" Content="5.000đ" Style="{StaticResource mainButton}">
+                <Button Foreground="WhiteSmoke" Width="90" Height="50" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="1" Grid.Column="2" Content="5.000đ" Style="{StaticResource mainButton}">
                     <Button.Effect>
                         <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
                     </Button.Effect>
                 </Button>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="2" Grid.Column="0" Content="10.000đ" Style="{StaticResource mainButton}">
+                <Button Foreground="WhiteSmoke" Width="90" Height="50" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="2" Grid.Column="0" Content="10.000đ" Style="{StaticResource mainButton}">
                     <Button.Effect>
                         <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
                     </Button.Effect>
                 </Button>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="2" Grid.Column="1" Content="20.000đ" Style="{StaticResource mainButton}">
+                <Button Foreground="WhiteSmoke" Width="90" Height="50" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="2" Grid.Column="1" Content="20.000đ" Style="{StaticResource mainButton}">
                     <Button.Effect>
                         <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
                     </Button.Effect>
                 </Button>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="2" Grid.Column="2" Content="50.000đ" Style="{StaticResource mainButton}">
+                <Button Foreground="WhiteSmoke" Width="90" Height="50" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="2" Grid.Column="2" Content="50.000đ" Style="{StaticResource mainButton}">
                     <Button.Effect>
                         <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
                     </Button.Effect>
                 </Button>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="3" Grid.Column="0" Content="100.000đ" Style="{StaticResource mainButton}">
+                <Button Foreground="WhiteSmoke" Width="90" Height="50" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="3" Grid.Column="0" Content="100.000đ" Style="{StaticResource mainButton}">
                     <Button.Effect>
                         <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
                     </Button.Effect>
                 </Button>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="3" Grid.Column="1" Content="200.000đ" Style="{StaticResource mainButton}">
+                <Button Foreground="WhiteSmoke" Width="90" Height="50" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="3" Grid.Column="1" Content="200.000đ" Style="{StaticResource mainButton}">
                     <Button.Effect>
                         <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
                     </Button.Effect>
                 </Button>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="3" Grid.Column="2" Content="500.000đ" Style="{StaticResource mainButton}">
+                <Button Foreground="WhiteSmoke" Width="90" Height="50" Margin=" 3 3 3 3" Click="Button_Click" Grid.Row="3" Grid.Column="2" Content="500.000đ" Style="{StaticResource mainButton}">
                     <Button.Effect>
                         <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
                     </Button.Effect>
                 </Button>
-                <Button Foreground="WhiteSmoke" Width="90" Height="60" Margin=" 5 5 5 5" Click="Button_Delete_Click" Grid.Row="4" Grid.Column="0"  Content="Delete" Style="{StaticResource mainButton}">
+                <Button Foreground="WhiteSmoke" Width="90" Height="50" Margin=" 5 5 5 5" Click="Button_Delete_Click" Grid.Row="4" Grid.Column="0"  Content="Delete" Style="{StaticResource mainButton}">
                     <Button.Effect>
                         <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
                     </Button.Effect>
                 </Button>
-                <Button Background="Green" BorderBrush="Green" Foreground="WhiteSmoke"   Height="70" Margin=" 5 5 5 5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"  Content="thanh toán" Style="{StaticResource mainButton}">
+                <Button Background="Green" BorderBrush="Green" Foreground="WhiteSmoke"   Height="50" Margin=" 5 5 5 5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"  Content="thanh toán" Style="{StaticResource mainButton}">
                     <Button.Effect>
-                        <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
+                        <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color ="Green" />
                     </Button.Effect>
                 </Button>
             </Grid>

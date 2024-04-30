@@ -44,7 +44,7 @@ namespace Minimart_Project_WPF.Views
                 if (int.TryParse(moneyString, out moneyValue))
                 {
                     totalMoney += moneyValue;
-                    TotalMoneyTextBlock.Text = string.Format("Số tiền khách đưa: "+"{0:N0}đ", totalMoney);
+                    TotalMoneyTextBlock.Text = string.Format("Khách đưa: "+"{0:N0}đ", totalMoney);
                 }
             }
         }
@@ -52,7 +52,7 @@ namespace Minimart_Project_WPF.Views
         private void Button_Delete_Click(object sender, RoutedEventArgs e)
         {
             totalMoney = 0;
-            TotalMoneyTextBlock.Text = string.Format("Số tiền khách đưa: " + "{0:N0}đ", totalMoney);
+            TotalMoneyTextBlock.Text = string.Format("Khách đưa: " + "{0:N0}đ", totalMoney);
         }
 
         

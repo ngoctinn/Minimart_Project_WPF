@@ -6,8 +6,44 @@
              xmlns:local="clr-namespace:Minimart_Project_WPF.UserControls"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="80" d:DesignWidth="600">
     <materialDesign:Card>
-        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock  Grid.Column="0" Text="Sản phẩm  aaa bbb ccc xxx yyy zzz" FontSize="18" MaxWidth="250" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" Margin="10"/>
+            <Grid Grid.Column="1" Margin="5 0 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource mainButton}" Width="30" Height="30">
+                    <materialDesign:PackIcon
+                        Width="20"
+                        Height="20"
+                        Kind="Minus" />
+                </Button>
+                <TextBox Grid.Column="1" FontSize="18" Height="40" Width="60" Style="{StaticResource MaterialDesignTextBoxBase}" Margin="5"/>
+                <Button Grid.Column="2" Style="{StaticResource mainButton}" Width="30" Height="30">
+                    <materialDesign:PackIcon
+                        Width="20"
+                        Height="20"
+                        Kind="Plus" />
+                </Button>
+            </Grid>
+            <TextBlock Grid.Column="2" Text="100.000.000 VNĐ" FontSize="16" VerticalAlignment="Center" Margin="10"/>
+            <Button Grid.Column="3" Style="{StaticResource mainButton}"  Background= "White" Width="40" Height="40" HorizontalAlignment="Right" Margin="10 0 0 0">
+                <materialDesign:PackIcon
+                        Width="30"
+                        Height="30"
+                        Kind="Delete"
+                        Foreground="Red"/>
+            </Button>
+        </Grid>
     </materialDesign:Card>
 </UserControl>
