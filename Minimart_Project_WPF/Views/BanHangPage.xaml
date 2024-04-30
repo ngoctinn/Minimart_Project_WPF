@@ -53,17 +53,29 @@
 
             <materialDesign:Card Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Background="White" BorderBrush="Black" BorderThickness="1" >
                 <StackPanel Margin="5 5 5 5" Width="1000" Height="200" HorizontalAlignment="Stretch">
-
-                    <TextBlock Text="Họ tên:"/>
-                    <TextBox></TextBox>
-                    <TextBlock Text="Số điện thoại:"/>
-                    <TextBox/>
-                    <TextBlock Text="Hạng thành viên:"/>
-                    <TextBox/>
-                    <TextBlock Text="Điểm thành viên:"/>
-                    <TextBox/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Khách hàng thành viên" FontSize="25" FontWeight="DemiBold" Grid.Row="0" Grid.ColumnSpan="2"/>
+                        <TextBlock Text="Họ tên:" FontSize="15" FontWeight="DemiBold"  Grid.Row="1" Grid.Column="0"/>
+                        <TextBlock Text="Nguyễn Ngọc Tín" FontSize="15" Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock Text="Số điện thoại:" FontSize="15" FontWeight="DemiBold"  Grid.Row="2" Grid.Column="0"/>
+                        <TextBlock Text="0397662903" FontSize="15" Grid.Row="2" Grid.Column="1"/>
+                        <TextBlock Text="Hạng thành viên:" FontSize="15" FontWeight="DemiBold"  Grid.Row="3" Grid.Column="0"/>
+                        <TextBlock Text="Vàng" FontSize="15" Grid.Row="3" Grid.Column="1"/>
+                        <TextBlock Text="Điểm thành viên:"  FontSize="15" FontWeight="DemiBold"  Grid.Row="4" Grid.Column="0"/>
+                        <TextBlock Text="3000" FontSize="15" Grid.Row="4" Grid.Column="1"/>
+                    </Grid>
                 </StackPanel>
-
             </materialDesign:Card>
             <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2">
                 
