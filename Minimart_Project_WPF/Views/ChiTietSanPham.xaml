@@ -27,6 +27,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
@@ -44,14 +45,18 @@
             <Separator Grid.Row="1" Grid.ColumnSpan="2" Height="0.7" Margin="-20 20 -20 20" Background="#E1E6EB"/>
 
             <!--Inputs-->
-            <TextBox x:Name="MaSanPham" Height="50" FontSize="13" materialDesign:HintAssist.Background="White"  materialDesign:HintAssist.Hint="Mã sản phẩm" Grid.Row="2" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
-            <TextBox x:Name="TenSanPham" Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Tên sản phẩm" Grid.Row="3" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
-            <ComboBox Name="LoaiSanPham" ItemsSource="{Binding LoaiSanPham}" Height="50" FontSize="13" materialDesign:HintAssist.Background="White"  materialDesign:HintAssist.Hint="Loại sản phẩm" Grid.Row="4" Style="{StaticResource MaterialDesignOutlinedComboBox}" ></ComboBox>
-            <TextBox x:Name="DonViTinh" Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Đơn vị tính" Grid.Row="5" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
-            <TextBox x:Name="GiaBan" Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Giá bán" Grid.Row="6" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
-            <TextBox x:Name="SoLuong" Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Số lượng" Grid.Row="7" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
-            <TextBox x:Name="TrangThai" Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Trạng thái" Grid.Row="8" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <TextBox Name="txtMaSanPham" Text="{Binding MaSanPham}" Height="50" FontSize="13" materialDesign:HintAssist.Background="White"  materialDesign:HintAssist.Hint="Mã sản phẩm" Grid.Row="2" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <TextBox x:Name="txtTenSanPham" Text="{Binding TenSanPham}" Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Tên sản phẩm" Grid.Row="3" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <ComboBox Name="cbbLoaiSanPham" Text="{Binding LoaiSanPhamSelected}" ItemsSource="{Binding LoaiSanPham}" Height="50" FontSize="13" materialDesign:HintAssist.Background="White"  materialDesign:HintAssist.Hint="Loại sản phẩm" Grid.Row="4" Style="{StaticResource MaterialDesignOutlinedComboBox}" ></ComboBox>
+            <TextBox x:Name="txtDonViTinh" Text="{Binding DonViTinh}" Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Đơn vị tính" Grid.Row="5" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <TextBox x:Name="txtGiaBan" Text="{Binding GiaBan}" Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Giá bán" Grid.Row="6" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <TextBox x:Name="txtSoLuong" Text="{Binding SoLuong}" Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Số lượng" Grid.Row="7" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <TextBox x:Name="txtTrangThai" Text="{Binding TrangThai}" Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Trạng thái" Grid.Row="8" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
             
+            <Button x:Name="btnChonAnh" Grid.Row="9" Click="btnChonAnh_Click" Content="Chọn ảnh" Height="50" HorizontalAlignment="Left" Style="{StaticResource mainButton}" />
+            <Image x:Name="imgSanPham" Source="{Binding AnhSanPham}" HorizontalAlignment="Right" Grid.Row="9" ></Image>
+            
+
             <!--Form Bottom Background-->
             <Border Grid.Row="10" Grid.ColumnSpan="2" Height="80" Background="WhiteSmoke" CornerRadius="0 0 10 10" Margin="-20 0 -20 20"/>
             <!--Main Button-->

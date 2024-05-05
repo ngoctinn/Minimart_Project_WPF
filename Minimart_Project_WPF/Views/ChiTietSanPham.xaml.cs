@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using Minimart_Project_WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,19 @@ namespace Minimart_Project_WPF.Views
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen; // Set the startup location of the window to the center of the screen
+        }
+
+        private void btnChonAnh_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.png;*.jpeg;*.jpg)|*.png;*.jpeg;*.jpg|All files (*.*)|*.*";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                var bitmapImage = new BitmapImage(new Uri(openFileDialog.FileName));
+                imgSanPham.Source = bitmapImage;
+                var viewModel = (SanPhamViewModel)this.DataContext;
+                viewModel.AnhSanPham = bitmapImage;
+            }
         }
     }
 }
