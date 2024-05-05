@@ -87,6 +87,13 @@ namespace Minimart_Project_WPF.ViewModels
                     };
                     context.SanPhams.Add(sanPham);
                     context.SaveChanges();
+                    MessageBox.Show("Thêm sản phẩm thành công!");
+
+                    // Close the form
+                    Application.Current.Windows.OfType<ChiTietSanPham>().FirstOrDefault()?.Close();
+
+                    // Reload the data
+                    LoadSanPhams();
                 }
             });
 
