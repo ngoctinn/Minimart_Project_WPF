@@ -45,6 +45,15 @@ namespace Minimart_Project_WPF.Views
           
         }
 
-        
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            using var context = new csassignmentContext();
+            {
+                var maLoaiSanPham = context.LoaiSanPhams.Where(x => x.TenLoaiSanPham == cbLoaiSanPham.SelectedItem.ToString()).Select(x => x.MaLoaiSanPham).FirstOrDefault();
+                var view = CollectionViewSource.GetDefaultView(membersDataGrid.ItemsSource);
+                view.Filter = item => (item as SanPham).MaLoaiSanPham == maLoaiSanPham;
+                view.Refresh();
+            }
+        }
     }
 }

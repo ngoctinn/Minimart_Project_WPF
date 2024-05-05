@@ -7,6 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:uc="clr-namespace:Minimart_Project_WPF.UserControls"
         mc:Ignorable="d"
+        DataContext="{StaticResource SanPhamVM}"
         Title="ChiTietSanPham" Height="650" Width="544"
         ResizeMode="NoResize">
  
@@ -43,18 +44,18 @@
             <Separator Grid.Row="1" Grid.ColumnSpan="2" Height="0.7" Margin="-20 20 -20 20" Background="#E1E6EB"/>
 
             <!--Inputs-->
-            <TextBox Height="50" FontSize="13" materialDesign:HintAssist.Background="White"  materialDesign:HintAssist.Hint="Mã sản phẩm" Grid.Row="2" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
-            <TextBox Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Tên sản phẩm" Grid.Row="3" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
-            <ComboBox Height="50" FontSize="13" materialDesign:HintAssist.Background="White"  materialDesign:HintAssist.Hint="Loại sản phẩm" Grid.Row="4" Style="{StaticResource MaterialDesignOutlinedComboBox}" ></ComboBox>
-            <TextBox Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Đơn vị tính" Grid.Row="5" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
-            <TextBox Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Giá bán" Grid.Row="6" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
-            <TextBox Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Số lượng" Grid.Row="7" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
-            <TextBox Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Trạng thái" Grid.Row="8" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <TextBox x:Name="MaSanPham" Height="50" FontSize="13" materialDesign:HintAssist.Background="White"  materialDesign:HintAssist.Hint="Mã sản phẩm" Grid.Row="2" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <TextBox x:Name="TenSanPham" Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Tên sản phẩm" Grid.Row="3" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <ComboBox Name="LoaiSanPham" ItemsSource="{Binding LoaiSanPham}" Height="50" FontSize="13" materialDesign:HintAssist.Background="White"  materialDesign:HintAssist.Hint="Loại sản phẩm" Grid.Row="4" Style="{StaticResource MaterialDesignOutlinedComboBox}" ></ComboBox>
+            <TextBox x:Name="DonViTinh" Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Đơn vị tính" Grid.Row="5" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <TextBox x:Name="GiaBan" Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Giá bán" Grid.Row="6" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <TextBox x:Name="SoLuong" Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Số lượng" Grid.Row="7" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
+            <TextBox x:Name="TrangThai" Height="50" FontSize="13" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Trạng thái" Grid.Row="8" Style="{StaticResource MaterialDesignOutlinedTextBox}" ></TextBox>
             
             <!--Form Bottom Background-->
             <Border Grid.Row="10" Grid.ColumnSpan="2" Height="80" Background="WhiteSmoke" CornerRadius="0 0 10 10" Margin="-20 0 -20 20"/>
             <!--Main Button-->
-            <Button Grid.Column="1" Grid.Row="10" Content="Xác nhận" HorizontalAlignment="Right" Margin="0 -15 20 0" Style="{StaticResource mainButton}">
+            <Button Command="{Binding AddSanPhamCommand}" Grid.Column="1" Grid.Row="10" Content="Xác nhận" HorizontalAlignment="Right" Margin="0 -15 20 0" Style="{StaticResource mainButton}">
                 <Button.Effect>
                     <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
                 </Button.Effect>

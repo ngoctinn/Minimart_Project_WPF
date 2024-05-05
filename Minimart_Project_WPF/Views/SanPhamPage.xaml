@@ -16,7 +16,7 @@
       Name="sanphampage"
       Title="SanPhamPage">
 
-    <Border Background="White" BorderBrush="Black" BorderThickness="0" CornerRadius="20">
+    <Border  Background="White" BorderBrush="Black" BorderThickness="0" CornerRadius="20">
         <Grid  Margin="15 15 15 15">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -24,7 +24,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
@@ -45,13 +45,14 @@
                   Style="{StaticResource MaterialDesignPaperLightButton}"
                   ToolTip="Resource name: MaterialDesignPaperLightButton" />
                 <ComboBox
+                    x:Name="cbLoaiSanPham"
+                    SelectionChanged="ComboBox_SelectionChanged"
                     materialDesign:HintAssist.Hint="Loại sản phẩm"
                     Margin="10 0 0 2"
                     Height="30"
+                    ItemsSource="{Binding LoaiSanPham}"
                     Style="{StaticResource MaterialDesignComboBox}">
-                    <ComboBoxItem Content="Item 1" />
-                    <ComboBoxItem Content="Item 2" />
-                    <ComboBoxItem Content="Item 3" />
+                    
                 </ComboBox>
             </StackPanel>
 
@@ -75,6 +76,7 @@
                   Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             </StackPanel>
             <DataGrid
+                
                 CellStyle="{DynamicResource DataGridCellStyle1}"
                 Padding="0 15 0 0"
                 CanUserAddRows="False"
@@ -94,7 +96,7 @@
                         </DataGridCheckBoxColumn.HeaderTemplate>
                     </DataGridCheckBoxColumn>
                     <!--#-->
-                    <DataGridTextColumn  Header="#" IsReadOnly="True" CanUserResize="False" Width="70" Binding="{Binding MaSanPham}">
+                    <DataGridTextColumn  Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding MaSanPham}">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
@@ -103,7 +105,7 @@
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
                     <!--Member-->
-                    <DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding TenSanPham}" IsReadOnly="True" Width="2*">
+                    <DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding TenSanPham}" IsReadOnly="True" Width="auto">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Left" />
@@ -120,7 +122,7 @@
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Đơn vị" Binding="{Binding DonViTinh}" IsReadOnly="True" Width="69">
+                    <DataGridTextColumn Header="Đơn vị" Binding="{Binding DonViTinh}" IsReadOnly="True" Width="auto">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
