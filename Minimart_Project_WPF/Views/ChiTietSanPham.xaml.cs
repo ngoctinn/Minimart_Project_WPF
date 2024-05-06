@@ -46,5 +46,7 @@ namespace Minimart_Project_WPF.Views
                 viewModel.AnhSanPham = bitmapImage;
             }
         }
+
+        
     }
 }

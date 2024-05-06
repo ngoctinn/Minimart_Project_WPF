@@ -56,7 +56,7 @@
 
             <Button x:Name="btnChonAnh" Grid.Row="5" Grid.Column="1" Click="btnChonAnh_Click" Content="Chọn ảnh" Height="50" Width="220" HorizontalAlignment="Left" Style="{StaticResource secondaryButton}" Margin="3 0 3 0" />
             <materialDesign:Card Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" Height="50" Width="50" Margin="3 0 3 0">
-                <Image x:Name="imgSanPham" Source="{Binding AnhSanPham}"  />
+                <Image x:Name="imgSanPham" Source="{Binding AnhSanPham}"/>
             </materialDesign:Card>
             
 

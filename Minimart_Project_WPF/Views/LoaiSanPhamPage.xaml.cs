@@ -26,17 +26,6 @@ namespace Minimart_Project_WPF.Views
             InitializeComponent();
         }
 
-        private void ThemLoaiSanPham_Click(object sender, RoutedEventArgs e)
-        {
-            if (InputStackPanel.Visibility == Visibility.Collapsed)
-            {
-                InputStackPanel.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                InputStackPanel.Visibility = Visibility.Collapsed;
-            }
-        }
 
         private void timKiemLoaiSanPham_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -44,6 +33,23 @@ namespace Minimart_Project_WPF.Views
             var view = CollectionViewSource.GetDefaultView(membersDataGrid.ItemsSource);
             view.Filter = item => (item as LoaiSanPham).TenLoaiSanPham.ToLower().Contains(filter);
             view.Refresh();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            using var context = new csassignmentContext();
+            {
+                var trangThai = context.LoaiSanPhams.Where(x => x.TrangThai == cbTrangThai.SelectedItem.ToString()).Select(x => x.TrangThai).FirstOrDefault();
+                var view = CollectionViewSource.GetDefaultView(membersDataGrid.ItemsSource);
+                view.Filter = item => (item as LoaiSanPham).TrangThai == trangThai;
+                view.Refresh();
+            }
+        }
+
+        private void btnThemLoaiSanPham_Click(object sender, RoutedEventArgs e)
+        {
+            ChiTietLoaiSanPham chiTietLoaiSanPham = new ChiTietLoaiSanPham();
+            chiTietLoaiSanPham.ShowDialog();
         }
     }
 }

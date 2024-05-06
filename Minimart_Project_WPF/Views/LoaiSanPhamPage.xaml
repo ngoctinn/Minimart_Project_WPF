@@ -29,16 +29,10 @@
 
             <TextBlock Margin="15,0,0,0" Grid.Row="0"  TextAlignment="Left" FontSize="30" FontWeight="Bold"> Loại sản phẩm</TextBlock>
             <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Left" Margin="15 0 0  0">
-                <Button
-                x:Name="ThemLoaiSanPham"
-                Background="#FFFF4081"
-                Click="ThemLoaiSanPham_Click"
-                Height="30"
-                Width="160"
-                materialDesign:ButtonAssist.CornerRadius="5"
-                Style="{StaticResource MaterialDesignFlatSecondaryLightBgButton}"
-                ToolTip="MaterialDesignRaisedButton with Round Corners">
-                    <TextBlock Text="Thêm loại sản phẩm" Foreground="White"/>
+                <Button x:Name="btnThemLoaiSanPham" Click="btnThemLoaiSanPham_Click" Height="30" Content="Thêm loại sản phẩm" Style="{StaticResource mainButton}">
+                    <Button.Effect>
+                        <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
+                    </Button.Effect>
                 </Button>
                 <Button
               Width="100"
@@ -50,12 +44,12 @@
               Style="{StaticResource MaterialDesignPaperLightButton}"
               ToolTip="Resource name: MaterialDesignPaperLightButton" />
                 <ComboBox
-                materialDesign:HintAssist.Hint="(float hint)"
+                Name="cbTrangThai"
+                SelectionChanged="ComboBox_SelectionChanged"
+                materialDesign:HintAssist.Hint="Trạng thái"
                 Margin="10 0 0 2"
+                ItemsSource="{Binding TrangThai}"
                 Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-                    <ComboBoxItem Content="Item 1" />
-                    <ComboBoxItem Content="Item 2" />
-                    <ComboBoxItem Content="Item 3" />
                 </ComboBox>
             </StackPanel>
 
@@ -157,13 +151,7 @@
                         </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
-                <StackPanel x:Name="InputStackPanel" Margin="0,15,0,0" Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
-                    <TextBlock Text="Nhập tên sản phẩm" />
-                    <TextBox Style="{DynamicResource MaterialDesignFilledTextBox}" Width="300" />
-                    <TextBlock Text="Nhập mã sản phẩm" Margin="0 15 0 0" />
-                    <TextBox Style="{DynamicResource MaterialDesignFilledTextBox}" Width="300"  IsReadOnly="True"/>
-                    <Button Content="Xác nhận" Width="{Binding ElementName=textBlockTenSanPham, Path=ActualWidth}" Height="30" />
-                </StackPanel>
+                
             </Grid>
 
 
