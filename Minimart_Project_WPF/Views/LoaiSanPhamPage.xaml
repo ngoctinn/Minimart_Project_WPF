@@ -47,10 +47,19 @@
                 Name="cbTrangThai"
                 SelectionChanged="ComboBox_SelectionChanged"
                 materialDesign:HintAssist.Hint="Trạng thái"
-                Margin="10 0 0 2"
+                Margin="10 0 0 20"
+                Height="50"
+                FontSize="16"
                 ItemsSource="{Binding TrangThai}"
                 Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                 </ComboBox>
+                <Button
+    x:Name="btnLamMoi"
+    Width="30" Height="30"
+    Margin="10 0 0 0"
+    Style="{StaticResource deleteButton}">
+                    <materialDesign:PackIcon Kind="Refresh" />
+                </Button>
             </StackPanel>
 
             <!--Seprator-->

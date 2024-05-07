@@ -31,13 +31,13 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <TextBlock Foreground="#d01e64" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="30" Margin="0 0 0 0" Text="ĐĂNG NHẬP" FontWeight="Bold"/>
+                    <TextBlock Foreground="#FFFF4081" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="30" Margin="0 0 0 0" Text="ĐĂNG NHẬP" FontWeight="Bold"/>
                 </Grid>
                 <Grid Grid.Row="1">
                     <TextBox
                           Text="{Binding UserName}"
+                           materialDesign:HintAssist.Background="White"
                           VerticalAlignment="Top"
-                          materialDesign:HintAssist.HelperText="Helper text"
                           materialDesign:HintAssist.Hint="Tài khoản"
                           Style="{StaticResource MaterialDesignOutlinedTextBox}">
                     </TextBox>
@@ -45,8 +45,8 @@
                 <Grid Grid.Row="2">
                     <StackPanel>
                         <PasswordBox 
-                      Name="FloatingPasswordBox"
-                        materialDesign:HintAssist.HelperText="Not bound password"
+                        materialDesign:HintAssist.Background="White"
+                        Name="FloatingPasswordBox"
                         materialDesign:HintAssist.Hint="Mật khẩu"
                         materialDesign:TextFieldAssist.HasClearButton="True"
                         IsEnabled="{Binding ElementName=RevealPasswordOutlinedEnabled, Path=IsChecked}"
@@ -65,12 +65,13 @@
                 <Grid Grid.Row="3">
                     <Button
                           Height="40"
+                            Width="auto"
                           FontSize="16"
                           Content="Đăng nhập"
                           Command="{Binding LoginCommand}"
                           CommandParameter="{Binding ElementName=loginwindow}"
                           IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                          Style="{StaticResource MaterialDesignFlatSecondaryMidBgButton}"
+                          Style="{StaticResource mainButton}"
                           ToolTip="MaterialDesignFlatSecondaryMidBgButton" />
                 </Grid>
             </Grid>

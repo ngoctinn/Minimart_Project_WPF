@@ -48,12 +48,28 @@
                     x:Name="cbLoaiSanPham"
                     SelectionChanged="ComboBox_SelectionChanged"
                     materialDesign:HintAssist.Hint="Loại sản phẩm"
-                    Margin="10 0 0 2"
-                    Height="30"
+                    Margin="10 0 0 20"
+                    Height="50"
+                    FontSize="16"
                     ItemsSource="{Binding LoaiSanPham}"
-                    Style="{StaticResource MaterialDesignComboBox}">
-                    
+                    Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                 </ComboBox>
+                <ComboBox
+                    x:Name="cbTrangThai"
+                    SelectionChanged="ComboBox_SelectionChanged"
+                    materialDesign:HintAssist.Hint="Trạng thái"
+                    Margin="10 0 0 20"
+                    Height="50"
+                    FontSize="16"
+                    Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                                </ComboBox>
+                <Button
+                    x:Name="btnLamMoi"
+                    Width="30" Height="30"
+                    Margin="10 0 0 0"
+                    Style="{StaticResource deleteButton}">
+                    <materialDesign:PackIcon Kind="Refresh" />
+                </Button>
             </StackPanel>
 
             <!--Seprator-->
@@ -68,8 +84,9 @@
                     TextChanged="tbTimKiem_TextChanged"
                     Panel.ZIndex="1"
                     Height="50"
-                    Width="500"
+                    Width="400"
                     FontSize="16"
+                    Margin="0 0 0 20"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center"
                   materialDesign:HintAssist.Hint="Nhập sản phẩm cần tìm"
