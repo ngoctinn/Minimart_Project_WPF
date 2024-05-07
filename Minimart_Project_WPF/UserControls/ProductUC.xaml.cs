@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Minimart_Project_WPF.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,8 +24,9 @@ namespace Minimart_Project_WPF.UserControls
         public ProductUC()
         {
             InitializeComponent();
-
         }
+
+        
         
     }
 }

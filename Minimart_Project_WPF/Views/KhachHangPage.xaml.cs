@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Minimart_Project_WPF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace Minimart_Project_WPF.Views
         public KhachHangPage()
         {
             InitializeComponent();
+        }
+
+        private void timKiemKhachHang_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var filter = (sender as TextBox).Text.ToLower();
+            var view = CollectionViewSource.GetDefaultView(membersDataGrid.ItemsSource);
+            view.Filter = item => (item as KhachHang).SoDienThoai.ToLower().Contains(filter);
+            view.Refresh();
         }
     }
 }
