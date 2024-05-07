@@ -267,6 +267,27 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="deleteButton" TargetType="Button" BasedOn="{StaticResource mainButton}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="#F3505A" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="7" BorderThickness="0.8" BorderBrush="#F3505A">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 1"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#F3505A" />
+                <Setter Property="Foreground" Value="#ffffff" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
 
 </ResourceDictionary>
 

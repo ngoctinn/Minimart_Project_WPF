@@ -20,9 +20,15 @@ namespace Minimart_Project_WPF.UserControls
     /// </summary>
     public partial class ProductDetailUC : UserControl
     {
+        public event EventHandler DeleteClicked;
         public ProductDetailUC()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+          DeleteClicked?.Invoke(this, e);
         }
     }
 }

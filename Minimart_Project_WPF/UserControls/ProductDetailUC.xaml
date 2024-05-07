@@ -10,39 +10,39 @@
     <materialDesign:Card>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock  Grid.Column="0" Text="Sản phẩm  aaa bbb ccc xxx yyy zzz" FontSize="18" MaxWidth="250" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" Margin="10"/>
+            <TextBlock  Grid.Column="0" Text="{Binding TenSanPham}" FontSize="13" MaxWidth="250" TextWrapping="NoWrap" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="10"/>
             <Grid Grid.Column="1" Margin="5 0 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Style="{StaticResource mainButton}" Width="30" Height="30">
+                <Button Grid.Column="0" Style="{StaticResource secondaryButton}" Width="30" Height="30">
                     <materialDesign:PackIcon
                         Width="20"
                         Height="20"
                         Kind="Minus" />
                 </Button>
-                <TextBox Grid.Column="1" FontSize="18" Height="40" Width="60" Style="{StaticResource MaterialDesignTextBoxBase}" Margin="5"/>
-                <Button Grid.Column="2" Style="{StaticResource mainButton}" Width="30" Height="30">
+                <TextBox Grid.Column="1" FontSize="18" Height="40" Width="45" Style="{StaticResource MaterialDesignTextBoxBase}" Margin="5"/>
+                <Button Grid.Column="2" Style="{StaticResource secondaryButton}" Width="30" Height="30">
                     <materialDesign:PackIcon
                         Width="20"
                         Height="20"
                         Kind="Plus" />
                 </Button>
             </Grid>
-            <TextBlock Grid.Column="2" Text="100.000.000 VNĐ" FontSize="16" VerticalAlignment="Center" Margin="10"/>
-            <Button Grid.Column="3" Style="{StaticResource mainButton}"  Background= "White" Width="40" Height="40" HorizontalAlignment="Right" Margin="10 0 0 0">
+            <TextBlock Grid.Column="2" Text="{Binding GiaBan}" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Button Grid.Column="3" Click="Button_Click" Style="{StaticResource deleteButton}"  Width="30" Height="30" HorizontalAlignment="Right" Margin="0 0 5 0">
                 <materialDesign:PackIcon
-                        Width="30"
-                        Height="30"
+                        Width="25"
+                        Height="25"
                         Kind="Delete"
-                        Foreground="Red"/>
+                       />
             </Button>
         </Grid>
     </materialDesign:Card>

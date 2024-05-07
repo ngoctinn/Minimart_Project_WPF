@@ -10,6 +10,7 @@ namespace Minimart_Project_WPF.ViewModels
 {
     public class BanHangViewModel : BaseViewModel
     {
+ 
         private ObservableCollection<SanPham> _products;
 
         public ObservableCollection<SanPham> Products
@@ -34,5 +35,6 @@ namespace Minimart_Project_WPF.ViewModels
                 Products = new ObservableCollection<SanPham>(context.SanPhams.ToList());
             }
         }
+
     }
 }

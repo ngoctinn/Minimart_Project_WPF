@@ -21,12 +21,15 @@ namespace Minimart_Project_WPF.UserControls
     /// </summary>
     public partial class ProductUC : UserControl
     {
+        public event EventHandler ProductSelected;
         public ProductUC()
         {
             InitializeComponent();
         }
 
-        
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ProductSelected?.Invoke(this, e);
+        }
     }
 }
