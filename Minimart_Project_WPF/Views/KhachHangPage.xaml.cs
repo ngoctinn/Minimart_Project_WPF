@@ -33,5 +33,13 @@ namespace Minimart_Project_WPF.Views
             view.Filter = item => (item as KhachHang).SoDienThoai.ToLower().Contains(filter);
             view.Refresh();
         }
+
+        
+
+        private void btnThemKhachHang_Click_2(object sender, RoutedEventArgs e)
+        {
+            Window window = new ChiTietKhachHang();
+            window.ShowDialog();
+        }
     }
 }

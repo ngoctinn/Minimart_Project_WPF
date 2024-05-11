@@ -29,7 +29,7 @@
 
             <TextBlock Margin="15,0,0,0" Grid.Row="0"  TextAlignment="Left" FontSize="30" FontWeight="Bold">Khách hàng thành viên</TextBlock>
             <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Left" Margin="15 0 0  0">
-                <Button x:Name="btnThemKhachHang" Height="30" Content="Thêm khách hàng" Style="{StaticResource mainButton}">
+                <Button x:Name="btnThemKhachHang" Height="30" Content="Thêm khách hàng" Style="{StaticResource mainButton}" Click="btnThemKhachHang_Click_2">
                     <Button.Effect>
                         <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
                     </Button.Effect>

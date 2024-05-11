@@ -29,7 +29,7 @@
 
             <TextBlock Margin="15,0,0,0" Grid.Row="0"  TextAlignment="Left" FontSize="30" FontWeight="Bold">Khuyến mãi</TextBlock>
             <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Left" Margin="15 0 0  0">
-                <Button x:Name="btnThemLoaiSanPham" Height="30" Content="Thêm khuyến mãi" Style="{StaticResource mainButton}">
+                <Button x:Name="btnThemKhuyenMai" Height="30" Content="Thêm khuyến mãi" Style="{StaticResource mainButton}" Click="btnThemKhuyenMai_Click" >
                     <Button.Effect>
                         <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
                     </Button.Effect>
@@ -62,19 +62,19 @@
                     Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                 </ComboBox>
                 <DatePicker
-  Width="100"
+                    Width="120"
                     Height="40"
                     FontSize="16"
                     Margin="10 0 0 10"
-  materialDesign:HintAssist.Hint="Thời gian">
+                    materialDesign:HintAssist.Hint="Thời gian">
                     <DatePicker.Resources>
                         <Style
-      x:Key="CustomCalendarDayButton"
-      TargetType="CalendarDayButton"
-      BasedOn="{StaticResource MaterialDesignCalendarDayButton}">
+                            x:Key="CustomCalendarDayButton"
+                              TargetType="CalendarDayButton"
+                              BasedOn="{StaticResource MaterialDesignCalendarDayButton}">
                             <Setter
-        Property="materialDesign:CalendarAssist.SelectionColor"
-        Value="#B2F39B" />
+            Property="materialDesign:CalendarAssist.SelectionColor"
+            Value="LightPink" />
                             <Setter
         Property="materialDesign:CalendarAssist.SelectionForegroundColor"
         Value="Black" />
@@ -85,7 +85,7 @@
       BasedOn="{StaticResource MaterialDesignCalendarButton}">
                             <Setter
         Property="materialDesign:CalendarAssist.SelectionColor"
-        Value="#B2F39B" />
+        Value="LightPink" />
                             <Setter
         Property="materialDesign:CalendarAssist.SelectionForegroundColor"
         Value="Black" />
@@ -96,7 +96,7 @@
       BasedOn="{StaticResource MaterialDesignDatePickerCalendarPortrait}">
                             <Setter
         Property="Background"
-        Value="#343C3F" />
+        Value="White" />
                             <Setter
         Property="CalendarButtonStyle"
         Value="{StaticResource CustomCalendarButton}" />
@@ -108,7 +108,7 @@
         Value="White" />
                             <Setter
         Property="materialDesign:CalendarAssist.HeaderBackground"
-        Value="#A2E9FF" />
+        Value="#FFFFEFF4" />
                             <Setter
         Property="materialDesign:CalendarAssist.HeaderForeground"
         Value="Black" />
@@ -166,6 +166,7 @@
                     AutoGenerateColumns="False"
                     TextBlock.TextAlignment="Center"
                     Grid.Column="0"
+                    FontSize="16"
                     RowStyle="{DynamicResource DataGridRowStyle1}"
                     ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
                     x:Name="khuyenMaiDataGrid"
@@ -185,6 +186,7 @@
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="5 5 0 5" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
@@ -194,7 +196,7 @@
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Left" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
-                                    <Setter Property="Margin" Value="5 0 0 0" />
+                                    <Setter Property="Margin" Value="5 5 0 5" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
@@ -204,6 +206,7 @@
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="5 5 0 5" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
@@ -213,24 +216,27 @@
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="5 5 0 5" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
                         <!--ThoiGianBatDau-->
-                        <DataGridTextColumn Header="Thời gian bắt đầu" Binding="{Binding ThoiGianBatDau}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn Header="Thời gian bắt đầu" Binding="{Binding ThoiGianBatDau}" IsReadOnly="True" Width="auto">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="5 5 0 5" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
                         <!--ThoiGianKetThuc-->
-                        <DataGridTextColumn Header="Thời gian kết thúc" Binding="{Binding ThoiGianKetThuc}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn Header="Thời gian kết thúc" Binding="{Binding ThoiGianKetThuc}" IsReadOnly="True" Width="auto">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="5 5 0 5" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>

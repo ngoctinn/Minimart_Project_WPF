@@ -49,7 +49,7 @@
                 </ComboBox>
                 
                 <DatePicker
-                    Width="100"
+                    Width="120"
                     Height="40"
                     FontSize="16"
                     Margin="10 0 0 10"
@@ -61,7 +61,7 @@
                               BasedOn="{StaticResource MaterialDesignCalendarDayButton}">
                             <Setter
             Property="materialDesign:CalendarAssist.SelectionColor"
-            Value="#B2F39B" />
+            Value="LightPink" />
                             <Setter
         Property="materialDesign:CalendarAssist.SelectionForegroundColor"
         Value="Black" />
@@ -72,7 +72,7 @@
       BasedOn="{StaticResource MaterialDesignCalendarButton}">
                             <Setter
         Property="materialDesign:CalendarAssist.SelectionColor"
-        Value="#B2F39B" />
+        Value="LightPink" />
                             <Setter
         Property="materialDesign:CalendarAssist.SelectionForegroundColor"
         Value="Black" />
@@ -83,7 +83,7 @@
       BasedOn="{StaticResource MaterialDesignDatePickerCalendarPortrait}">
                             <Setter
         Property="Background"
-        Value="#343C3F" />
+        Value="White" />
                             <Setter
         Property="CalendarButtonStyle"
         Value="{StaticResource CustomCalendarButton}" />
@@ -95,7 +95,7 @@
         Value="White" />
                             <Setter
         Property="materialDesign:CalendarAssist.HeaderBackground"
-        Value="#A2E9FF" />
+        Value="#FFFFEFF4" />
                             <Setter
         Property="materialDesign:CalendarAssist.HeaderForeground"
         Value="Black" />
@@ -152,6 +152,7 @@
                     AutoGenerateColumns="False"
                     TextBlock.TextAlignment="Center"
                     Grid.Column="0"
+                    FontSize="16"
                     RowStyle="{DynamicResource DataGridRowStyle1}"
                     ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
                     x:Name="phieuNhapDataGrid"
@@ -166,11 +167,12 @@
                             </DataGridCheckBoxColumn.HeaderTemplate>
                         </DataGridCheckBoxColumn>
                         <!--MaPhieuNhap-->
-                        <DataGridTextColumn Header="#" Binding="{Binding MaPhieuNhap}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn Header="#" Binding="{Binding MaPhieuNhap}" IsReadOnly="True" Width="auto">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="5 5 0 5" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
@@ -180,37 +182,27 @@
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
-                                    <Setter Property="Margin" Value="5 2 0 2" />
+                                    <Setter Property="Margin" Value="5 5 0 5" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
                         <!--MaNguoiTao-->
-                        <DataGridTextColumn Header="Mã người tạo" Binding="{Binding MaNguoiTao}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn Header="Mã người tạo" Binding="{Binding MaNguoiTao}" IsReadOnly="True" Width="auto">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
-                                    <Setter Property="Margin" Value="5 2 0 2" />
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                        
-                        <DataGridTextColumn Header="Tên người tạo" Binding="{Binding MaNguoiTao}" IsReadOnly="True" Width="*">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Setter Property="HorizontalAlignment" Value="Center" />
-                                    <Setter Property="VerticalAlignment" Value="Center" />
-                                    <Setter Property="Margin" Value="5 2 0 2" />
+                                    <Setter Property="Margin" Value="5 5 0 5" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
                         <!--ThoiGianTao-->
-                        <DataGridTextColumn Header="Thời gian tạo" Binding="{Binding ThoiGianTao}" IsReadOnly="True" Width="*">
+                        <DataGridTextColumn Header="Thời gian tạo" Binding="{Binding ThoiGianTao}" IsReadOnly="True" Width="auto">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
-                                    <Setter Property="Margin" Value="5 2 0 2" />
+                                    <Setter Property="Margin" Value="5 5 0 5" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
@@ -221,7 +213,7 @@
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
-                                    <Setter Property="Margin" Value="5 2 0 2" />
+                                    <Setter Property="Margin" Value="5 5 0 5" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
@@ -231,10 +223,31 @@
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
-                                    <Setter Property="Margin" Value="5 2 0 2" />
+                                    <Setter Property="Margin" Value="5 5 0 5" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
+                        <!--Hành động-->
+                        <DataGridTemplateColumn Header="Hành động" Width="auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button
+                                            Width="30" Height="30"
+                                            Margin="10 0 0 0"
+                                            Style="{StaticResource editButton}">
+                                            <materialDesign:PackIcon Kind="Pencil" />
+                                        </Button>
+                                        <Button
+                                            Width="30" Height="30"
+                                            Margin="10 0 0 0"
+                                            Style="{StaticResource deleteButton}">
+                                            <materialDesign:PackIcon Kind="Delete" />
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
 
