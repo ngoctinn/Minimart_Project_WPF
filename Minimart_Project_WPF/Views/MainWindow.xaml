@@ -78,13 +78,13 @@
                         <Button x:Name="btnKhachHang" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnKhachHang_MouseEnter" MouseLeave="btnKhachHang_MouseLeave" Click="btnKhachHang_Click" Visibility="Collapsed">
                             <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource khachhang}" IconWidth="25" Text="Hoá đơn" VerticalAlignment="Center"/>
                         </Button>
-                        <Button x:Name="btnKhuyenMai" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnKhuyenMai_MouseEnter" MouseLeave="btnKhuyenMai_MouseLeave" Click="btnKhachHang_Click" Visibility="Collapsed">
+                        <Button x:Name="btnKhuyenMai" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnKhuyenMai_MouseEnter" MouseLeave="btnKhuyenMai_MouseLeave" Click="btnKhuyenMai_Click" Visibility="Collapsed">
                             <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource loaisanpham}" IconWidth="25" Text="Khuyến mãi" VerticalAlignment="Center"/>
                         </Button>
                         <Button x:Name="btnHoaDon" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnHoaDon_MouseEnter" MouseLeave="btnHoaDon_MouseLeave" Visibility="Collapsed">
                             <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource car}" IconWidth="25" Text="Hóa đơn" VerticalAlignment="Center"/>
                         </Button>
-                        <Button x:Name="btnKhoHang" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnKhoHang_MouseEnter" MouseLeave="btnKhoHang_MouseLeave" Click="btnKhoHang_Click" Visibility="Collapsed">
+                        <Button x:Name="btnPhieuNhap" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnPhieuNhap_MouseEnter" MouseLeave="btnPhieuNhap_MouseLeave" Click="btnPhieuNhap_Click" Visibility="Collapsed">
                             <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource billing}" IconWidth="25" Text="Khách hàng" VerticalAlignment="Center"/>
                         </Button>
                         <Button x:Name="btnNhapKho" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnNhapKho_MouseEnter" MouseLeave="btnNhapKho_MouseLeave" Visibility="Collapsed">
@@ -93,7 +93,7 @@
                         <Button x:Name="btnXuatKho" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnXuatKho_MouseEnter" MouseLeave="btnXuatKho_MouseLeave" Visibility="Collapsed">
                             <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource settings}" IconWidth="25" Text="Xuất kho" VerticalAlignment="Center"/>
                         </Button>
-                        <Button x:Name="btnTaiKhoan" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnTaiKhoan_MouseEnter" MouseLeave="btnTaiKhoan_MouseLeave" Visibility="Collapsed">
+                        <Button x:Name="btnTaiKhoan" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnTaiKhoan_MouseEnter" MouseLeave="btnTaiKhoan_MouseLeave" Click="btnTaiKhoan_Click" Visibility="Collapsed">
                             <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource settings}" IconWidth="25" Text="Tài Khoản" VerticalAlignment="Center"/>
                         </Button>
                     </StackPanel>

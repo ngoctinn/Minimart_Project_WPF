@@ -18,9 +18,9 @@ namespace Minimart_Project_WPF.Views
     /// <summary>
     /// Interaction logic for KhoHangPage.xaml
     /// </summary>
-    public partial class KhoHangPage : Page
+    public partial class PhieuNhapPage : Page
     {
-        public KhoHangPage()
+        public PhieuNhapPage()
         {
             InitializeComponent();
         }

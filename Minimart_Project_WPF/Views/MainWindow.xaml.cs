@@ -123,7 +123,7 @@ namespace Minimart_Project_WPF.Views
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnKhachHang;
+                Popup.PlacementTarget = btnKhuyenMai;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
                 Header.PopupText.Text = "Khuyến mãi";
@@ -136,18 +136,18 @@ namespace Minimart_Project_WPF.Views
             Popup.IsOpen = false;
         }
 
-        private void btnKhoHang_MouseEnter(object sender, MouseEventArgs e)
+        private void btnPhieuNhap_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnKhoHang;
+                Popup.PlacementTarget = btnPhieuNhap;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Kho Hàng";
+                Header.PopupText.Text = "Phiếu Nhập";
             }
         }
 
-        private void btnKhoHang_MouseLeave(object sender, MouseEventArgs e)
+        private void btnPhieuNhap_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
@@ -266,9 +266,13 @@ namespace Minimart_Project_WPF.Views
         {
             fContainer.Navigate(new System.Uri("Views/KhuyenMaiPage.xaml", UriKind.RelativeOrAbsolute));
         }
-        private void btnKhoHang_Click(object sender, RoutedEventArgs e)
+        private void btnPhieuNhap_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Views/KhoHangPage.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(new System.Uri("Views/PhieuNhapPage.xaml", UriKind.RelativeOrAbsolute));
+        }
+        private void btnTaiKhoan_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Views/TaiKhoanPage.xaml", UriKind.RelativeOrAbsolute));
         }
 
         //Thực hiện chức năng phân quyền người dùng 
@@ -292,7 +296,7 @@ namespace Minimart_Project_WPF.Views
                     btnLoaiSanPham.Visibility = Visibility.Visible;
                     btnKhachHang.Visibility = Visibility.Visible;
                     btnKhuyenMai.Visibility = Visibility.Visible;
-                    btnKhoHang.Visibility = Visibility.Visible;
+                    btnPhieuNhap.Visibility = Visibility.Visible;
                     btnHoaDon.Visibility = Visibility.Visible;
                     btnNhapKho.Visibility = Visibility.Visible;
                     btnXuatKho.Visibility = Visibility.Visible;

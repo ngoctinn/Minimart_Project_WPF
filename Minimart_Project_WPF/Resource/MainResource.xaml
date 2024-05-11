@@ -8,5 +8,8 @@
     <viewmodel:LoaiSanPhamViewModel x:Key="LoaiSanPhamVM"></viewmodel:LoaiSanPhamViewModel>
     <viewmodel:BanHangViewModel x:Key="BanHangVM"></viewmodel:BanHangViewModel>
     <viewmodel:KhachHangViewModel x:Key="KhachHangVM"></viewmodel:KhachHangViewModel>
+    <viewmodel:TaiKhoanViewModel x:Key="TaiKhoanVM"></viewmodel:TaiKhoanViewModel>
+    <viewmodel:KhuyenMaiViewModel x:Key="KhuyenMaiVM"></viewmodel:KhuyenMaiViewModel>
+    <viewmodel:PhieuNhapViewModel x:Key="PhieuNhapVM"></viewmodel:PhieuNhapViewModel>
 
 </ResourceDictionary>

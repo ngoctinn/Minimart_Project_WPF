@@ -1,11 +1,11 @@
-﻿<Page x:Class="Minimart_Project_WPF.Views.KhuyenMaiPage"
+﻿<Page x:Class="Minimart_Project_WPF.Views.PhieuNhapPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Minimart_Project_WPF.Views"
       mc:Ignorable="d" 
-      DataContext="{StaticResource KhuyenMaiVM}"
+      DataContext="{StaticResource PhieuNhapVM}"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
       Background="Transparent"
@@ -27,13 +27,9 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Margin="15,0,0,0" Grid.Row="0"  TextAlignment="Left" FontSize="30" FontWeight="Bold">Khuyến mãi</TextBlock>
+            <TextBlock Margin="15,0,0,0" Grid.Row="0"  TextAlignment="Left" FontSize="30" FontWeight="Bold">Phiếu nhập</TextBlock>
             <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Left" Margin="15 0 0  0">
-                <Button x:Name="btnThemLoaiSanPham" Height="30" Content="Thêm khuyến mãi" Style="{StaticResource mainButton}">
-                    <Button.Effect>
-                        <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
-                    </Button.Effect>
-                </Button>
+                
                 <Button
               Width="100"
               Height="30"
@@ -49,32 +45,23 @@
                 Margin="10 0 0 20"
                 Height="50"
                 FontSize="16"
-                ItemsSource="{Binding TrangThai}"
                 Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                 </ComboBox>
-                <ComboBox
-                    Name="cbLoaiGiaTri"
-                    materialDesign:HintAssist.Hint="Loại giá trị"
-                    Margin="10 0 0 20"
-                    Height="50"
-                    FontSize="16"
-                    ItemsSource="{Binding TrangThai}"
-                    Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-                </ComboBox>
+                
                 <DatePicker
-  Width="100"
+                    Width="100"
                     Height="40"
                     FontSize="16"
                     Margin="10 0 0 10"
-  materialDesign:HintAssist.Hint="Thời gian">
+                    materialDesign:HintAssist.Hint="Thời gian">
                     <DatePicker.Resources>
                         <Style
-      x:Key="CustomCalendarDayButton"
-      TargetType="CalendarDayButton"
-      BasedOn="{StaticResource MaterialDesignCalendarDayButton}">
+                            x:Key="CustomCalendarDayButton"
+                              TargetType="CalendarDayButton"
+                              BasedOn="{StaticResource MaterialDesignCalendarDayButton}">
                             <Setter
-        Property="materialDesign:CalendarAssist.SelectionColor"
-        Value="#B2F39B" />
+            Property="materialDesign:CalendarAssist.SelectionColor"
+            Value="#B2F39B" />
                             <Setter
         Property="materialDesign:CalendarAssist.SelectionForegroundColor"
         Value="Black" />
@@ -123,11 +110,10 @@
                     </DatePicker.Resources>
                 </DatePicker>
                 <Button
-                    x:Name="btnLamMoi"
                     Width="30" Height="30"
                     Margin="10 0 0 0"
                     Style="{StaticResource deleteButton}">
-                   <materialDesign:PackIcon Kind="Refresh" />
+                    <materialDesign:PackIcon Kind="Refresh" />
                 </Button>
             </StackPanel>
 
@@ -146,7 +132,7 @@
                 FontSize="16"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
-              materialDesign:HintAssist.Hint="Nhập khuyến mãi cần tìm"
+              materialDesign:HintAssist.Hint="Nhập phiếu nhập cần tìm "
               Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             </StackPanel>
             <Grid Grid.Row="4">
@@ -161,26 +147,26 @@
                     Padding="0 15 0 0"
                     CanUserAddRows="False"
                     Background="White"
-                    ItemsSource="{Binding KhuyenMais}"
+                    ItemsSource="{Binding PhieuNhaps}"
                     Style="{StaticResource MaterialDesignDataGrid}"
                     AutoGenerateColumns="False"
                     TextBlock.TextAlignment="Center"
                     Grid.Column="0"
                     RowStyle="{DynamicResource DataGridRowStyle1}"
                     ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
-                    x:Name="khuyenMaiDataGrid"
+                    x:Name="phieuNhapDataGrid"
                     Grid.ColumnSpan="2">
                     <DataGrid.Columns>
-                        <!--Checkbox-->
-                        <DataGridCheckBoxColumn Header="C" CanUserResize="False" Width="auto">
+                        <!--CheckBox-->
+                        <DataGridCheckBoxColumn  Header="C" CanUserResize="False" Width="auto" >
                             <DataGridCheckBoxColumn.HeaderTemplate>
                                 <DataTemplate>
-                                    <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    <CheckBox  HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </DataTemplate>
                             </DataGridCheckBoxColumn.HeaderTemplate>
                         </DataGridCheckBoxColumn>
-                        <!--MaKhuyenMai-->
-                        <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding MaKhuyenMai}">
+                        <!--MaPhieuNhap-->
+                        <DataGridTextColumn Header="#" Binding="{Binding MaPhieuNhap}" IsReadOnly="True" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
@@ -188,49 +174,64 @@
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <!--TenKhuyenMai-->
-                        <DataGridTextColumn Header="Tên khuyến mãi" Binding="{Binding TenKhuyenMai}" IsReadOnly="True" Width="2*">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Setter Property="HorizontalAlignment" Value="Left" />
-                                    <Setter Property="VerticalAlignment" Value="Center" />
-                                    <Setter Property="Margin" Value="5 0 0 0" />
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                        <!--LoaiGiaTri-->
-                        <DataGridTextColumn Header="Loại giá trị" Binding="{Binding LoaiGiaTri}" IsReadOnly="True" Width="*">
+                        <!--MaNhaCungCap-->
+                        <DataGridTextColumn Header="Mã nhà cung cấp" Binding="{Binding MaNhaCungCap}" IsReadOnly="True" Width="auto">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="5 2 0 2" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <!--GiaTri-->
-                        <DataGridTextColumn Header="Giá trị" Binding="{Binding GiaTri}" IsReadOnly="True" Width="*">
+                        <!--MaNguoiTao-->
+                        <DataGridTextColumn Header="Mã người tạo" Binding="{Binding MaNguoiTao}" IsReadOnly="True" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="5 2 0 2" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <!--ThoiGianBatDau-->
-                        <DataGridTextColumn Header="Thời gian bắt đầu" Binding="{Binding ThoiGianBatDau}" IsReadOnly="True" Width="*">
+                        
+                        <DataGridTextColumn Header="Tên người tạo" Binding="{Binding MaNguoiTao}" IsReadOnly="True" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="5 2 0 2" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <!--ThoiGianKetThuc-->
-                        <DataGridTextColumn Header="Thời gian kết thúc" Binding="{Binding ThoiGianKetThuc}" IsReadOnly="True" Width="*">
+                        <!--ThoiGianTao-->
+                        <DataGridTextColumn Header="Thời gian tạo" Binding="{Binding ThoiGianTao}" IsReadOnly="True" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="HorizontalAlignment" Value="Center" />
                                     <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="5 2 0 2" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+
+                        <!--TongTien-->
+                        <DataGridTextColumn Header="Tổng tiền" Binding="{Binding TongTien}" IsReadOnly="True" Width="*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="HorizontalAlignment" Value="Center" />
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="5 2 0 2" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <!--TrangThai-->
+                        <DataGridTextColumn Header="Trạng thái" Binding="{Binding TrangThai}" IsReadOnly="True" Width="*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="HorizontalAlignment" Value="Center" />
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="5 2 0 2" />
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
