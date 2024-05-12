@@ -30,7 +30,7 @@
 
             <TextBlock Margin="15,0,0,0" Grid.Row="0"  TextAlignment="Left" FontSize="30" FontWeight="Bold">Tài khoản</TextBlock>
             <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Left" Margin="15 0 0  0">
-                <Button Grid.Column="1" Grid.Row="10" Height="30" Content="Thêm tài khoản" HorizontalAlignment="Right"  Style="{StaticResource mainButton}">
+                <Button Grid.Column="1" Grid.Row="10" Height="30" Content="Thêm tài khoản" HorizontalAlignment="Right"  Style="{StaticResource mainButton}" Click="Button_Click">
                     <Button.Effect>
                         <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
                     </Button.Effect>
@@ -108,7 +108,7 @@
                         </DataGridCheckBoxColumn.HeaderTemplate>
                     </DataGridCheckBoxColumn>
                     <!--#-->
-                    <DataGridTextColumn  Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding MaTaiKhoan}">
+                    <DataGridTextColumn  Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding MaNguoiDung}">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center" />

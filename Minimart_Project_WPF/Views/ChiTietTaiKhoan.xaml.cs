@@ -12,17 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Minimart_Project_WPF
+namespace Minimart_Project_WPF.Views
 {
     /// <summary>
-    /// Interaction logic for LoginWindow.xaml
+    /// Interaction logic for ChiTietTaiKhoan.xaml
     /// </summary>
-    public partial class LoginWindow : Window
+    public partial class ChiTietTaiKhoan : Window
     {
-        public LoginWindow()
+        public ChiTietTaiKhoan()
         {
             InitializeComponent();
-            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
     }
 }

@@ -1,0 +1,102 @@
+﻿<Window x:Class="Minimart_Project_WPF.Views.ChiTietTaiKhoan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Minimart_Project_WPF.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:uc="clr-namespace:Minimart_Project_WPF.UserControls"
+        mc:Ignorable="d"
+        DataContext="{StaticResource SanPhamVM}"
+        Title="ChiTietSanPham" Height="620" Width="600"
+        ResizeMode="NoResize">
+
+    <Border CornerRadius="7" Background="White" Margin="0,0,0,33" >
+        <Border.Effect>
+            <DropShadowEffect Direction="-130" BlurRadius="30" ShadowDepth="5" Opacity="0.1"/>
+        </Border.Effect>
+
+        <Grid Margin="10,2,10,-59">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+
+            <!--Form Title-->
+
+
+            <TextBlock Text="Chi tiết sản phẩm" Foreground="#374655" FontSize="28" Margin="15 15 0 0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+
+            <!--Form Percentage-->
+
+
+            <Separator Grid.Row="1" Grid.ColumnSpan="2" Height="0.7" Margin="-20 20 -20 20" Background="#E1E6EB"/>
+
+            <!--Inputs-->
+            <TextBox Name="txtMaNguoiDung" Text="{Binding MaNguoiDung}" Height="50" FontSize="12" materialDesign:HintAssist.Background="White"  materialDesign:HintAssist.Hint="Mã Người Dùng" Grid.Row="2" Grid.Column="0" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="3 0 3 0"></TextBox>
+            <TextBox x:Name="txtHoTen" Text="{Binding HoTen}" Height="50" FontSize="12" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Họ Tên" Grid.Row="2" Grid.Column="1" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="3 0 3 0"></TextBox>
+            <ComboBox Name="cbbPhanQuyen"  ItemsSource="{Binding PhanQuyen}" Height="50" FontSize="12" materialDesign:HintAssist.Background="White"  materialDesign:HintAssist.Hint="Phân quyền" Grid.Row="3" Grid.Column="0" Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="3 0 3 0"></ComboBox>
+            <ComboBox Name="cbbGioiTinh"  ItemsSource="{Binding PhanQuyen}" Height="50" FontSize="12" materialDesign:HintAssist.Background="White"  materialDesign:HintAssist.Hint="Giới tính" Grid.Row="3" Grid.Column="1" Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="3 0 3 0"></ComboBox>
+            <TextBox x:Name="txtSoDienThoai" Text="{Binding SoDienThoai}" Height="50" FontSize="12" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Số Điện Thoại" Grid.Row="4" Grid.Column="0" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="3 0 3 0"></TextBox>
+            <TextBox x:Name="txtEmail" Text="{Binding Email}" Height="50" FontSize="12" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Email" Grid.Row="4" Grid.Column="1" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="3 0 3 0"></TextBox>
+            <TextBox x:Name="txtDiaChi" Text="{Binding DiaChi}" Height="50" FontSize="12" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Địa chỉ" Grid.Row="5" Grid.ColumnSpan="2" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="3 0 3 0"></TextBox>
+            <ComboBox x:Name="cbbTrangThai" Text="{Binding TrangThai}" Height="50" FontSize="12" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Giới tính" Grid.Row="6" Grid.Column="1" Style="{StaticResource MaterialDesignOutlinedComboBox}" Margin="3 0 3 0"></ComboBox>
+            <DatePicker Name="dpNgaySinh" Height="50" FontSize="12" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="NgaySinh" Grid.Row="6" Grid.Column="0" Style="{StaticResource MaterialDesignOutlinedDatePicker}" Margin="3 0 3 0">
+                <DatePicker.Resources>
+                    <Style x:Key="CustomCalendarDayButton" TargetType="CalendarDayButton" BasedOn="{StaticResource MaterialDesignCalendarDayButton}">
+                        <Setter Property="materialDesign:CalendarAssist.SelectionColor" Value="LightPink" />
+                        <Setter Property="materialDesign:CalendarAssist.SelectionForegroundColor" Value="Black" />
+                    </Style>
+                    <Style x:Key="CustomCalendarButton" TargetType="CalendarButton" BasedOn="{StaticResource MaterialDesignCalendarButton}">
+                        <Setter Property="materialDesign:CalendarAssist.SelectionColor" Value="LightPink" />
+                        <Setter Property="materialDesign:CalendarAssist.SelectionForegroundColor" Value="Black" />
+                    </Style>
+                    <Style x:Key="CustomCalendar" TargetType="{x:Type Calendar}" BasedOn="{StaticResource MaterialDesignDatePickerCalendarPortrait}">
+                        <Setter Property="Background" Value="White" />
+                        <Setter Property="CalendarButtonStyle" Value="{StaticResource CustomCalendarButton}" />
+                        <Setter Property="CalendarDayButtonStyle" Value="{StaticResource CustomCalendarDayButton}" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="materialDesign:CalendarAssist.HeaderBackground" Value="#FFFFEFF4" />
+                        <Setter Property="materialDesign:CalendarAssist.HeaderForeground" Value="Black" />
+                    </Style>
+                </DatePicker.Resources>
+            </DatePicker>
+            <TextBox x:Name="txtTenDangNhap" Text="{Binding TenDangNhap}" Height="50" FontSize="12" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Tên Đăng Nhập" Grid.Row="7" Grid.Column="0" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="3 0 3 0"></TextBox>
+            <TextBox x:Name="txtMatKhau" Text="{Binding MatKhau}" Height="50" FontSize="12" materialDesign:HintAssist.Background="White" materialDesign:HintAssist.Hint="Mật khẩu" Grid.Row="7" Grid.Column="1" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="3 0 3 0"></TextBox>
+
+
+
+
+
+            <!--Form Bottom Background-->
+            <Border Grid.Row="10" Grid.ColumnSpan="2" Height="80" Background="WhiteSmoke" CornerRadius="0 0 10 10" Margin="-20 0 -20 20"/>
+            <!--Main Button-->
+            <Button Command="{Binding AddSanPhamCommand}" Grid.ColumnSpan="2" Grid.Row="10" Content="Xác nhận" HorizontalAlignment="Right" Margin="0 -15 20 0" Style="{StaticResource mainButton}">
+                <Button.Effect>
+                    <DropShadowEffect Direction="-120" BlurRadius="10" Opacity="0.3" ShadowDepth="5" Color="#FFFF4081"/>
+                </Button.Effect>
+            </Button>
+
+            <!--Secondary Button-->
+            <Button Grid.Row="10" Grid.ColumnSpan="2" Content="Trở về" HorizontalAlignment="Left" Margin="20 -15 0 0" Style="{StaticResource secondaryButton}" />
+
+        </Grid>
+    </Border>
+</Window>
+
+    

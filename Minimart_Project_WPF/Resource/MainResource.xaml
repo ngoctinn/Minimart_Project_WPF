@@ -11,5 +11,6 @@
     <viewmodel:TaiKhoanViewModel x:Key="TaiKhoanVM"></viewmodel:TaiKhoanViewModel>
     <viewmodel:KhuyenMaiViewModel x:Key="KhuyenMaiVM"></viewmodel:KhuyenMaiViewModel>
     <viewmodel:PhieuNhapViewModel x:Key="PhieuNhapVM"></viewmodel:PhieuNhapViewModel>
+    <viewmodel:HoaDonViewModel x:Key="HoaDonVM"></viewmodel:HoaDonViewModel>
 
 </ResourceDictionary>

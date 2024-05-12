@@ -231,20 +231,14 @@
                         <DataGridTemplateColumn Header="Hành động" Width="auto">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
+                                    
                                         <Button
                                             Width="30" Height="30"
                                             Margin="10 0 0 0"
-                                            Style="{StaticResource editButton}">
+                                            Style="{StaticResource gridEditButton}">
                                             <materialDesign:PackIcon Kind="Pencil" />
                                         </Button>
-                                        <Button
-                                            Width="30" Height="30"
-                                            Margin="10 0 0 0"
-                                            Style="{StaticResource deleteButton}">
-                                            <materialDesign:PackIcon Kind="Delete" />
-                                        </Button>
-                                    </StackPanel>
+                                  
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

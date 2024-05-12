@@ -22,6 +22,7 @@ namespace Minimart_Project_WPF.Views
         public ChiTietKhuyenMai()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
     }
 }

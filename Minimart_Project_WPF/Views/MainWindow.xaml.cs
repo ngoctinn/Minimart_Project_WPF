@@ -160,7 +160,7 @@ namespace Minimart_Project_WPF.Views
                 Popup.PlacementTarget = btnHoaDon;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Poin Of Sale";
+                Header.PopupText.Text = "Hoá đơn";
             }
         }
 
@@ -273,6 +273,10 @@ namespace Minimart_Project_WPF.Views
         private void btnTaiKhoan_Click(object sender, RoutedEventArgs e)
         {
             fContainer.Navigate(new System.Uri("Views/TaiKhoanPage.xaml", UriKind.RelativeOrAbsolute));
+        }
+        private void btnHoaDon_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Views/HoaDonPage.xaml", UriKind.RelativeOrAbsolute));
         }
 
         //Thực hiện chức năng phân quyền người dùng 
