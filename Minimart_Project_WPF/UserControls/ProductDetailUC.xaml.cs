@@ -30,5 +30,24 @@ namespace Minimart_Project_WPF.UserControls
         {
           DeleteClicked?.Invoke(this, e);
         }
+
+        private void btnMinus_Click(object sender, RoutedEventArgs e)
+        {
+            int quantity = int.Parse(txtSoLuongSanPham.Text);
+            if (quantity > 1)
+            {
+                quantity--;
+                txtSoLuongSanPham.Text = quantity.ToString();
+            }
+
+        }
+
+        private void btnPlus_Click(object sender, RoutedEventArgs e)
+        {
+            int quantity = int.Parse(txtSoLuongSanPham.Text);
+            quantity++;
+            txtSoLuongSanPham.Text = quantity.ToString();
+
+        }
     }
 }

@@ -186,18 +186,18 @@ namespace Minimart_Project_WPF.Views
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
-        private void btnXuatKho_MouseEnter(object sender, MouseEventArgs e)
+        private void btnNhaCungCap_MouseEnter(object sender, MouseEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnXuatKho;
+                Popup.PlacementTarget = btnNhaCungCap;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Xuất Kho";
+                Header.PopupText.Text = "Nhà cung cấp";
             }
         }
 
-        private void btnXuatKho_MouseLeave(object sender, MouseEventArgs e)
+        private void btnNhaCungCap_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
@@ -278,6 +278,14 @@ namespace Minimart_Project_WPF.Views
         {
             fContainer.Navigate(new System.Uri("Views/HoaDonPage.xaml", UriKind.RelativeOrAbsolute));
         }
+        private void btnNhaCungCap_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Views/NhaCungCapPage.xaml", UriKind.RelativeOrAbsolute));
+        }
+        private void btnNhapKho_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Views/NhapHangPage.xaml", UriKind.RelativeOrAbsolute));
+        }
 
         //Thực hiện chức năng phân quyền người dùng 
         private void OnUserRoleChanged(string role)
@@ -303,7 +311,7 @@ namespace Minimart_Project_WPF.Views
                     btnPhieuNhap.Visibility = Visibility.Visible;
                     btnHoaDon.Visibility = Visibility.Visible;
                     btnNhapKho.Visibility = Visibility.Visible;
-                    btnXuatKho.Visibility = Visibility.Visible;
+                    btnNhaCungCap.Visibility = Visibility.Visible;
                     btnTaiKhoan.Visibility = Visibility.Visible;
                     btnThongKe.Visibility = Visibility.Visible;
                     break;
@@ -321,5 +329,7 @@ namespace Minimart_Project_WPF.Views
                     break;
             }
         }
+
+        
     }
 }

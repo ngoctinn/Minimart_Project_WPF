@@ -22,14 +22,14 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Style="{StaticResource secondaryButton}" Width="30" Height="30">
+                <Button x:Name="btnMinus" Click="btnMinus_Click" Grid.Column="0" Style="{StaticResource secondaryButton}" Width="30" Height="30">
                     <materialDesign:PackIcon
                         Width="20"
                         Height="20"
                         Kind="Minus" />
                 </Button>
-                <TextBox Grid.Column="1" FontSize="18" Height="40" Width="45" Style="{StaticResource MaterialDesignTextBoxBase}" Margin="5"/>
-                <Button Grid.Column="2" Style="{StaticResource secondaryButton}" Width="30" Height="30">
+                <TextBox x:Name="txtSoLuongSanPham" Text="1" TextAlignment="Center" Grid.Column="1" FontSize="18" Height="40" Width="45" Style="{StaticResource MaterialDesignTextBoxBase}" Margin="5"/>
+                <Button x:Name="btnPlus" Click="btnPlus_Click" Grid.Column="2" Style="{StaticResource secondaryButton}" Width="30" Height="30">
                     <materialDesign:PackIcon
                         Width="20"
                         Height="20"
